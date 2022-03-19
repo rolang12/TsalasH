@@ -7,6 +7,7 @@ use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
 use App\Models\Product;
 use App\Models\ProductOrder;
+use App\Models\Sabor;
 use Illuminate\Support\Facades\Crypt;
 use Cart;
 use Carbon\Carbon;
@@ -58,6 +59,13 @@ class OrdersController extends Controller
             $productOrder->products_id = $item->id;
             $productOrder->orders_id = $order->id;
             $productOrder->quantity = $item->quantity;
+
+            $sabores =  new Sabor();
+            $sabores['products_id'] = $item->id;
+            $sabores['sabor_selected'] = $item->sabores;
+            $sabores['orders_id'] = $order->id;
+            $sabores->save();
+    
             $productOrder->save();
            
             /* Actualizar el stock del producto */
@@ -70,24 +78,27 @@ class OrdersController extends Controller
         
         $product = Cart::clear();
         
-        return redirect()->route('orders.orders-client-resume',['orderid' => $orderid]);
+        return redirect()->route('orders.orders-client-resume',['orderid' => $orderid, 'sabores' => $sabores ]);
         
     }
     
-    public function orderClientResume($orderid)
+    public function orderClientResume($orderid, $sabores)
     {
+        $sabores = Sabor::with('product')
+        ->where('orders_id', $orderid)
+        ->get();
+
         $orders = ProductOrder::with('product','order', 'order.user')
         ->get()
         ->where('order.users_id', Auth::user()->id )
         ->where('orders_id', $orderid)
         ->sortBy('orders_id');
         
+        $orders = $orders->merge($sabores);
 
         return view('users.order-client-resume',compact('orders'))->with( 'status', 'Su pedido ha sido enviado exitosamente!');
-
     }
    
-
     /**
      * Display the specified resource.
      *
@@ -141,26 +152,7 @@ class OrdersController extends Controller
         ->where('created_at', '>', $ayer)
         ->where('order.status','confirmado')
         ->sortBy('orders_id');
-        
-
-        // ->only('created_at');
-        
-        // $hoy = Carbon::today();
-       
-        // $user = Order::with('user')
-        // ->get();
-        
-        // $hoy = substr($hoy, 0, -9);
-
-        // $orders = DB::table('product_orders')
-        // ->join('products','products.id','=','product_orders.products_id')
-        // ->join('orders', 'product_orders.orders_id', '=', 'orders.id')
-        // ->join('users', 'orders.users_id', '=', 'users.id')
-        // ->select('products.*','users.*','orders.*','quantity')
-        // ->addSelect('products.name as productName', 'orders.created_at as OrderDate' )
-        // ->whereDate('orders.created_at', '=', $hoy)
-        // ->get();
-            
+    
         return view('orders.orders-resume',compact('orders'));
 
     }
@@ -172,10 +164,10 @@ class OrdersController extends Controller
      * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public functionpdate(UpdateOrderRequest $request, Order $order)
+    public function update(UpdateOrderRequest $request, Order $order)
     {
         
-        $order = Order::fi und($request->id);
+        $order = Order::find($request->id);
         $order->status         = $request->status;
         $order->users_id         = $request->users_id;
         $order->save();

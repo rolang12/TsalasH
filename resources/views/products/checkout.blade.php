@@ -9,6 +9,8 @@
 
 <!-- ====== Table Section Start -->
 <livewire:messages.success-product/>
+
+{{-- {{dd(Cart::getContent())}} --}}
 @if (count(Cart::getContent()))
     <section class="bg-white mt-24 py-10 lg:py-[120px]">
         <div class="container">
@@ -129,7 +131,7 @@
     {!! Form::hidden('users_id', Auth::user()->id ) !!}
     {!! Form::hidden('status', 'enviado') !!}
     {!! Form::hidden('total', Cart::getTotal()) !!}
-    {!! Form::submit('enviar') !!}
+    {!! Form::submit('Enviar', ['class' => ' text-lg transform hover:scale-110 motion-reduce:transform-none duration-500 p-4 bg-gradient-to-r from-pink-500  via-purple-400 to-blue-500 font-bold w-44 my-2 rounded-md text-center text-white  ' ])!!}
     {!! Form::close() !!}
 @else
 

@@ -9,19 +9,26 @@
 
 <div>
     <h2 class="ml-20 font-semibold text-4xl text-left mt-28 " >Datos del Pedido:</h2>
-    
+    {{-- {{ dd($orders) }} --}}
     <div class="invisible" >
-        @foreach ($orders as $order )
-            {{$id = $order->order->id}}        
-        @endforeach
+        {{-- @foreach ($orders as $order )
+        {{$id = $order->order->id}}
+            
+        @endforeach --}}
     </div>
-       
+    {{-- @php
+                if $orders->has(['order']) {
+                $id = $order->order->id 
+                }
+            @endphp 
+     --}}
+      
     <table class="ml-16 py-3   " >
         <tr >
             <td class="px-6 py-2 font-semibold" >Fecha:</td> <td> {{ $fechaActual = date ( 'd-m-Y H:i:s' );}} </td> 
         </tr>
         <tr>
-            <td class="px-6 py-2 font-semibold" >ID Pedido:</td> <td> {{$id}}</td> 
+            <td class="px-6 py-2 font-semibold" >ID Pedido:</td> <td>id</td> 
         </tr>
         <tr>
             <td class="px-6 py-2 font-semibold" >Nombre:</td> <td> {{ Auth::user()->name." ".Auth::user()->last_name }} </td> 
@@ -49,6 +56,9 @@
                                 Producto
                             </th>
                             <th class="px-6 py-2 ">
+                                Sabor
+                            </th>
+                            <th class="px-6 py-2 ">
                                 Precio
                             </th>
                             <th class="px-6 py-2 " >
@@ -62,11 +72,15 @@
                     </thead>
                     <tbody class="bg-white">
                         @foreach ( $orders as $order )
-                        
+                           
                             <tr class="whitespace-nowrap  ">
 
                                 <td class="px-6 py-4 text-sm ">
                                     {{$order->product->name}}
+                                </td>
+
+                                <td class="px-6 py-4 text-sm ">
+                                    {{$order->sabor_selected}}
                                 </td>
 
                                 <td class="px-6 py-4 text-sm  ">

@@ -38,19 +38,19 @@
     </style>
 
     <div class="carousel  relative grid-cols-1 h-auto md:h-screen shadow-2xl  ">
-        <div class="carousel-inner  h-auto md:h-screen relative overflow-hidden w-full">
+        <div class="carousel-inner  h-auto  md:h-screen relative overflow-hidden w-full">
             <!--Slide 1-->
             
             <input class="carousel-open  " type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden=""
                 checked="checked">
             <div class="carousel-item absolute  opacity-0" style="height:50vh;">
-                <div class="block  md:mt-0  h-auto md:h-screen w-full bg-gray-500 text-white text-5xl text-center">
+                <div class="block mt-20 md:mt-0  h-auto  md:h-screen w-full bg-gray-500 text-white text-5xl text-center">
 
                         <div class="contenedorimg">
                             <img
                             src="https://img.besthqwallpapers.com/Uploads/25-8-2017/19369/fruit-ice-cream-4k-dessert-ice-cream-balls-berries.jpg"
-                            class="w-full hover:contrast-150 duration-700 brightness-50 md:w-full lg:w-full xl:w-full " alt="">        
-                            <div class="centrado text-white md:text-5xl text-base font-bold">Bienvenid@s a TsalasH Delicias del Parque, adentra tu paladar a nuestros deliciosos sabores! </div>
+                            class="w-full hover:contrast-150 duration-700 brightness-50 h-96 md:h-auto md:w-full lg:w-full xl:w-full " alt="">        
+                            <div class="centrado text-white md:text-5xl  text-xl font-bold">Bienvenid@s a TsalasH Delicias del Parque, adentra tu paladar a nuestros deliciosos sabores! </div>
                         </div>
 
                 </div>
@@ -67,8 +67,8 @@
                     <div class="contenedorimg">
                         <!--<img src="https://s1.best-wallpaper.net/wallpaper/m/1706/Ice-cream-strawberry-dessert_m.webp"-->
                         <img src="https://s1.1zoom.me/big3/60/Sweets_Ice_cream_Balls_Multicolor_531419_4800x3200.jpg"
-                            class="w-full hover:contrast-150 duration-700 brightness-50 md:w-full lg:w-full xl:w-full" alt="" >
-                        <div class="centrado text-white text-5xl font-bold  ">Disfruta de una experiencia única, incluso en la comodidad de tu casa!</div>
+                            class="w-full hover:contrast-150 duration-700 brightness-50  h-96 md:h-auto  md:w-full lg:w-full xl:w-full" alt="" >
+                        <div class="centrado text-white md:text-5xl text-xl font-bold  ">Disfruta de una experiencia única, incluso en la comodidad de tu casa!</div>
                     </div>
                 </div>
             </div>
@@ -85,8 +85,8 @@
                     <div class="contenedorimg">
                     <!--<img src="https://www.semana.com/resizer/oOiCKGYoXtnq70nDtg-vb3nqDhQ=/1200x675/filters:format(jpg):quality(50)//cloudfront-us-east-1.images.arcpublishing.com/semana/QIQLCVJWQ5FEJFIOEXC5JW6XGE.jpg"-->
                     <img src="https://elifeenespanol.com/wp-content/uploads/2016/11/Fast-food.jpg"
-                        class="w-full hover:contrast-150 duration-700 brightness-50 md:w-full lg:w-full xl:w-full" alt=""></div>
-                        <div class="centrado text-white text-5xl font-bold  ">Tenemos un gran variedad para todos</div>
+                        class="w-full hover:contrast-150 duration-700 brightness-50 md:w-full h-96 md:h-auto  lg:w-full xl:w-full" alt=""></div>
+                        <div class="centrado text-white md:text-5xl text-xl font-bold  ">Tenemos un gran variedad para todos</div>
                     </div>
             </div>
             <label for="carousel-2"
@@ -127,7 +127,7 @@
     @endif
 
 
-    <div class="bg-purple-300 h-screen py-9 ">
+    <div class="bg-purple-300 md:mt-0 -mt-5 min-h-screen py-9 ">
        
         <div class="text-white text-5xl text-center  z-50 font-bold pb-12">Helados</div>
         <livewire:index.helados/>
@@ -135,7 +135,7 @@
         
     </div>
  
-    <div class="bg-orange-900 h-screen py-9">
+    <div class="bg-orange-900 min-h-screen py-9">
         
         <div class="text-white text-5xl text-center z-50 font-bold pb-12">Comidas Rápidas</div>
 
@@ -143,7 +143,7 @@
 
     </div>
 
-    <div class="bg-blue-400 h-screen py-9">     
+    <div class="bg-blue-400 min-h-screen py-9">     
         <div class="text-white text-5xl text-center z-50 font-bold pb-12">Bebidas</div>
 
         <livewire:index.bebidas/>

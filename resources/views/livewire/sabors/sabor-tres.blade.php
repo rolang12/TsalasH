@@ -44,14 +44,16 @@
 
                 }
 
-                if(contador < cantidadMaxima){
-                        const block = document.getElementById('block');
-                        let HTMLString = `<h1>Te falta elegir más sabores!</h1>`;
-                        block.innerHTML = HTMLString;
-                }else{
+                if (contador < cantidadMaxima){
+                    
                     const block = document.getElementById('block');
-                        let HTMLString = `<h1></h1>`;
-                        block.innerHTML = HTMLString;
+                    let HTMLString = `<h1>Te falta elegir más sabores!</h1>`;
+                    block.innerHTML = HTMLString;
+                } else {
+
+                    const block = document.getElementById('block');
+                    let HTMLString = `<h1></h1>`;
+                    block.innerHTML = HTMLString;
                 }       
   
                 $("#seleccionados").html(contador);

@@ -13,9 +13,9 @@ use Darryldecode\Cart\Validators\Validator;
 
 class CartController extends Controller
 {
+    
     public function add(Request $request) {
 
-        // dd($request);
         
         if ($request->quantity == 0) {
             return back()->with('status',"La cantidad debe ser mayor a 0!");
@@ -30,20 +30,19 @@ class CartController extends Controller
         $product->quantity = $request->quantity;
         $product->price = $request->price;
 
+        /* Insertando los sabores */
+        $data = array();
+        $sabores = implode(", ", $request->sabores);
+    
+        $data['sabor_selected'] = $sabores;
+       
         Cart::add(
             $product->id,
             $product->name,
             $product->price,
             $product->quantity,
+            $product->sabores = $data['sabor_selected'],
         );
-
-        $data = array();
-        $sabores = implode(", ", $request->sabores);
-    
-        $data['sabor_selected'] = $sabores;
-        $data['products_id'] = $request->id;
-        
-        $sabores   = Sabor::create($data);
 
         return back()->with('status',"$product->name Se ha agregado al carrito" );
 
@@ -52,6 +51,7 @@ class CartController extends Controller
     public function cart() {
 
         $params = [
+            
             'title' => 'Shopping Cart Checkout',
         ];
 

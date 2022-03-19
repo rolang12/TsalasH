@@ -112,7 +112,7 @@ Route::name('orders.')
     Route::get('/orders-resume', [App\Http\Controllers\OrdersController::class, 'orderResume'])
         ->name('orders-resume');
 
-    Route::get('/orders-client-resume/{orderid}', [App\Http\Controllers\OrdersController::class, 'orderClientResume'])
+    Route::get('/orders-client-resume/{orderid}/{sabores}', [App\Http\Controllers\OrdersController::class, 'orderClientResume'])
         ->name('orders-client-resume');
 
     Route::get('/order-show', [App\Http\Controllers\OrdersController::class, 'show'])

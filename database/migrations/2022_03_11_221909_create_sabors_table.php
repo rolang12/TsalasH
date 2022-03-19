@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->text('sabor_selected')->nullable();
             $table->foreignId('products_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('orders_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->float('price');
-            $table->integer('amount');
             $table->integer('stock_min');
             $table->string('description')->nullable();
             $table->timestamps();

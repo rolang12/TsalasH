@@ -28,4 +28,12 @@ class Product extends Model
         return $this->belongsTo(Category::class, 'categories_id');
 
     }
+
+    public function sabor() {
+        
+        return $this->hasOne(Sabor::class);
+
+    }
+
+
 }
