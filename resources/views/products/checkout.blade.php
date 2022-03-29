@@ -1,15 +1,13 @@
 @extends('layouts.layout')
 
 @section('content')
-    
-
-<script src="https://cdn.tailwindcss.com"></script>
+  
 <link rel="stylesheet" href="https://cdn.tailgrids.com/tailgrids-fallback.css" />
-<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
+{{-- Esta es la factura que aun se pueden eliminar productos antes de enviarlo --}}
 <!-- ====== Table Section Start -->
 <livewire:messages.success-product/>
-
+<div class="text-2xl font-semibold" >Carrito de Compras</div>
 {{-- {{dd(Cart::getContent())}} --}}
 @if (count(Cart::getContent()))
     <section class="bg-white mt-24 py-10 lg:py-[120px]">
@@ -20,11 +18,7 @@
                         <table class="table-auto w-full">
                             <thead>
                                 <tr class="bg-gradient-to-r from-gray-500 to-pink-600 text-center">
-                                <th
-                                    class="w-1/6 min-w-[160px] text-lg font-semibold text-white
-                                    py-2 lg:py-5 px-3 lg:px-4 border-l border-transparent">
-                                    ID
-                                </th>
+                                
                                 <th
                                     class=" w-1/6 min-w-[160px] text-lg font-semibold text-white
                                     py-2 lg:py-5 px-3 lg:px-4 ">
@@ -56,22 +50,23 @@
                             <tbody>
                             @foreach (Cart::getContent() as $item)
                                 <tr>
-                                    <td
-                                        class=" text-center text-dark font-medium text-base py-3
-                                        px-2 bg-[#F3F6FF] border-b border-l border-[#E8E8E8]" >
-                                        {{$item->id}}
-                                    </td>
+                                  
 
                                     <td
                                         class=" text-center text-dark font-medium text-base
                                         py-2 px-2 bg-white border-b border-[#E8E8E8]">
                                         {{$item->name}}
+
+                                        
+                                        @if ($item->sabores != null )
+                                            <div class="font-light text-sm" >Sabores:{{$item->sabores}}</div>
+                                        @endif 
                                     </td>
 
                                     <td
                                         class=" text-center text-dark font-medium text-base
                                         py-2 px-2 bg-[#F3F6FF] border-b border-[#E8E8E8]">
-                                        {{$item->price}}
+                                        ${{$item->price}}
                                     </td>
 
                                     <td
@@ -104,9 +99,9 @@
                                         Total:
                                     </td>
 
-                                    <td class="text-center text-dark font-medium text-base
+                                    <td class="text-center text-dark font-bold text-base
                                     py-4 px-2 bg-gray-300 border-b border-[#E8E8E8]" > 
-                                        {{ Cart::getTotal() }}
+                                        ${{ Cart::getTotal() }}
                                         
                                     </td>
                                 </tr>

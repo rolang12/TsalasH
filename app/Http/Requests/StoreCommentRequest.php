@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreProductRequest extends FormRequest
+class StoreCommentRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,12 +24,14 @@ class StoreProductRequest extends FormRequest
     public function rules()
     {
         return [
-            'file' => 'image',
-            'name' => 'required',
-            'stock_min' => 'required',
-            'price' => 'required',
-            'description' => 'required',
-            'categories_id' => 'required',
+            'content' =>'required|min:10|string'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'content.min:10' => 'El Comentario debe tener al menos 10 caracteres'
         ];
     }
 }

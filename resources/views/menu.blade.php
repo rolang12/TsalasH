@@ -1,13 +1,36 @@
 @extends('layouts.layout')
 
 @section('content')
+
 <livewire:messages.success-product/>
+
+<style>
+     
+        h2 {
+        animation-duration: 4s;
+        animation-name: slidein;
+        animation-delay: 1s;
+        }
+
+        @keyframes slidein {
+        from {
+            margin-left: 100%;
+            width: 300%
+        }
+
+        to {
+            margin-left: 0%;
+            width: 100%;
+        }
+    }
+</style>
+
 <div>
     <div class="contenedorimg w-full">
-        <img class=" w-full brightness-50 blur-sm" src="https://previews.123rf.com/images/prakasit/prakasit1704/prakasit170401061/77239818-retrato-de-un-grupo-de-amigos-comiendo-helado-delante-de-la-pared-de-ladrillo-marr%C3%B3n-.jpg" alt="">
-        <div class="centrado text-white  text-5xl font-bold">
-            <p class="mb-5 mt-40" >Mira Nuestra Gran Variedad de Productos!</p>
-            <a href="#helados"><i class="fa-solid fa-arrow-down animate-bounce"></i></a>
+        <img class="md:mt-0 mt-20 w-full brightness-50 blur-sm" src="https://previews.123rf.com/images/prakasit/prakasit1704/prakasit170401061/77239818-retrato-de-un-grupo-de-amigos-comiendo-helado-delante-de-la-pared-de-ladrillo-marr%C3%B3n-.jpg" alt="">
+        <div class="centrado  text-white  md:text-5xl text-3xl font-bold">
+            <p class="mb-5 font-principal mt-40" >Mira Nuestra Gran Variedad de Productos!</p>
+            <a href="#helados"><i class="fa-solid invisible md:visible fa-arrow-down animate-bounce"></i></a>
         </div>
     </div>
 </div>
@@ -24,55 +47,52 @@
     </div>
 
 @endif
+
 <!-- Inicio de Recent Posts -->
-
-
 
 <div class="-mt-2">
 
     <div class="bg-black py-7 text-center ">
-        <p class="text-6xl animate-pulse duration-300 delay-200  text-white font-bold " >Recomendados</p>
+        <h2 class="md:text-6xl text-3xl font-principal-n  animate-pulse duration-300 delay-200  text-white font-semibold " >Recomendados</h2>
     </div>
 
     <livewire:recents-products/>
 
 </div>
 
-
-
 <!-- Fin de Recent Posts -->
 
-<div class="bg-purple-300 min-h-screen py-9 ">
+<div class="bg-purple-200 min-h-screen py-9 ">
     
-    <div class="text-white text-5xl text-center  z-50 font-bold pb-12">Helados</div>
+    <h2 class="text-white font-principal text-5xl text-center  z-50 font-bold pb-12">Helados</h2>
     <livewire:menu.helados/>
     
 </div>
 
-<div class="bg-orange-300 min-h-screen py-9 ">
+<div class="bg-white min-h-screen py-9 ">
     
-    <div class="text-white text-5xl text-center z-50 font-bold pb-12">Bebidas Frías</div>
+    <h2 class="text-pink-200 font-principal text-5xl text-center z-50 font-bold pb-12">Bebidas Frías</h2>
    <livewire:menu.bebidas-frias/>
 
 </div>
 
-<div class="bg-cyan-300 min-h-screen py-9 ">
+<div class="bg-cyan-200 min-h-screen py-9 ">
     
-    <div class="text-white text-5xl text-center z-50 font-bold pb-12">Bebidas Calientes</div>
+    <h2 class="text-white font-principal text-5xl text-center z-50 font-bold pb-12">Bebidas Calientes</h2>
     <livewire:menu.bebidas-calientes/>
 
 </div>
  
-<div class="bg-orange-900 min-h-screen py-9 ">
+<div class=" min-h-screen py-9 ">
     
-    <div class="text-white text-5xl text-center z-50 font-bold pb-12">Comidas Rápidas</div>
+    <h2 class="text-cyan-200 font-principal text-5xl text-center z-50 font-bold pb-12">Comidas Rápidas</h2>
     <livewire:menu.comidas-rapidas/>
 
 </div>
 
-<div class=" bg-brown  min-h-screen py-9 ">
+<div class=" bg-blue-200  min-h-screen py-9 ">
     
-    <div class="text-white text-5xl text-center z-50 font-bold pb-12">Carnes</div>
+    <h2 class="text-white font-principal text-5xl text-center z-50 font-bold pb-12">Carnes</h2>
     <livewire:menu.carnes/>
 
 </div>

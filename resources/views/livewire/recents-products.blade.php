@@ -44,7 +44,7 @@
                             font-semibold text-base text-gray-800
                             hover:text-white        
                             ">
-                            See More
+                            Ver Más
                         </a>
 
                     </div>

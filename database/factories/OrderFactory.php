@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -19,8 +20,9 @@ class OrderFactory extends Factory
         return [
             
             'status' => $this->faker->randomElement(['enviado','espera','proceso','despachado','confirmado']) ,
-            'place' => $this->faker->randomElement(['domicilio','local']) ,
-            'users_id' => $this->faker->numberBetween(1 ,10)
+            'place' => $this->faker->randomElement(['domicilio','local']),
+            'users_id' => User::all(['id'])->random(),
+            // 'users_id' => $this->faker->numberBetween(1 ,10)
 
         ];
     }

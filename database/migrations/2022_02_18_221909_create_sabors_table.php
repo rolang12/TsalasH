@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('sabors', function (Blueprint $table) {
             $table->id();
             $table->text('sabor_selected')->nullable();
-            $table->foreignId('products_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('orders_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('products_id')->nullable()->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('orders_id')->nullable()->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

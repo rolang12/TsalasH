@@ -8,11 +8,13 @@
 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 <link href="/dist/output.css" rel="stylesheet">
 <link rel="shortcut icon" href="images/icono.png">
+<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/938/938063.png">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 <script src="https://cdn.tailwindcss.com"></script>
+<script src="./TW-ELEMENTS-PATH/dist/js/index.min.js"></script>
 <script src="https://kit.fontawesome.com/6628fdf66e.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
@@ -30,9 +32,42 @@
         font-family: 'Nunito', sans-serif;
         
     }
+    
+    .font-principal{
+        font-family: 'Pacifico', cursive; 
+    }
+
+    .font-principal-n{
+        font-family: 'Pacifico', Arial, Helvetica, sans-serif;
+    }
 
     ::-webkit-scrollbar {
             display: none;
+    }
+
+    span-w {
+        
+        font-family: monospace;
+        white-space: nowrap;
+        border-right: 4px solid;
+        width: 18ch;
+        text-align: center;
+        display: block;
+        margin-left: 2%;
+        margin-top: 4%;
+        margin-bottom: 1%;
+        
+        animation: typing 3s steps(12),
+        blink .5s infinite step-end alternate;
+        overflow: hidden;
+    }
+
+    @keyframes typing {
+        from {width: 0}
+    }
+
+    @keyframes blink {
+    50% {border-color: transparent}
     }
     
     .contenedorimg{
@@ -55,109 +90,109 @@
     }
 
     .dataTables_wrapper select,
-            .dataTables_wrapper .dataTables_filter input {
-                color: #4a5568;
-                /*text-gray-700*/
-                padding-left: 1rem;
-                /*pl-4*/
-                padding-right: 1rem;
-                /*pl-4*/
-                padding-top: .5rem;
-                /*pl-2*/
-                padding-bottom: .5rem;
-                /*pl-2*/
-                line-height: 1.25;
-                /*leading-tight*/
-                border-width: 2px;
-                /*border-2*/
-                border-radius: .25rem;
-                border-color: #edf2f7;
-                /*border-gray-200*/
-                background-color: #edf2f7;
-                /*bg-gray-200*/
-            }
-
-            /*Row Hover*/
-            table.dataTable.hover tbody tr:hover,
-            table.dataTable.display tbody tr:hover {
-                background-color: #ebf4ff;
-                /*bg-indigo-100*/
-            }
-
-            /*Pagination Buttons*/
-            .dataTables_wrapper .dataTables_paginate .paginate_button {
-                font-weight: 700;
-                /*font-bold*/
-                border-radius: .25rem;
-                /*rounded*/
-                /*border border-transparent*/
-            }
-
-            /*Pagination Buttons - Current selected */
-            .dataTables_wrapper .dataTables_paginate .paginate_button.current {
-                color: #fff !important;
-                /*text-white*/
-                box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06);
-                /*shadow*/
-                font-weight: 700;
-                /*font-bold*/
-                border-radius: .25rem;
-                /*rounded*/
-                background: #000 !important;
-                /*bg-indigo-500*/
-                transform: perspective();
-                transition-duration: 500ms;
-                /*border border-transparent*/
-            }
-
-            /*Pagination Buttons - Hover */
-            .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
-                color: rgb(39, 36, 36) !important;
-                /*text-white*/
-                box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06);
-                /*shadow*/
-                font-weight: 700;
-                /*font-bold*/
-                border-radius: .25rem;
-                /*rounded*/
-                background: #FFF !important;
-                /*bg-indigo-500*/
-                /*border border-transparent*/
-            }
-
-            /*Add padding to bottom border */
-            table.dataTable.no-footer {
-                border-bottom: 1px solid #fff;
-                /*border-b-1 border-gray-300*/
-                margin-top: 0.75em;
-                margin-bottom: 0.75em;
-            }
-
-            /*Change colour of responsive icon*/
-            table.dataTable.dtr-inline.collapsed>tbody>tr>td:first-child:before,
-            table.dataTable.dtr-inline.collapsed>tbody>tr>th:first-child:before {
-                background-color: #667eea !important;
-                /*bg-indigo-500*/
-            }
-            .bg-brown {
-            background-color: #221802;
-
+        .dataTables_wrapper .dataTables_filter input {
+            color: #4a5568;
+            /*text-gray-700*/
+            padding-left: 1rem;
+            /*pl-4*/
+            padding-right: 1rem;
+            /*pl-4*/
+            padding-top: .5rem;
+            /*pl-2*/
+            padding-bottom: .5rem;
+            /*pl-2*/
+            line-height: 1.25;
+            /*leading-tight*/
+            border-width: 2px;
+            /*border-2*/
+            border-radius: .25rem;
+            border-color: #edf2f7;
+            /*border-gray-200*/
+            background-color: #edf2f7;
+            /*bg-gray-200*/
         }
+
+        /*Row Hover*/
+        table.dataTable.hover tbody tr:hover,
+        table.dataTable.display tbody tr:hover {
+            background-color: #ebf4ff;
+            /*bg-indigo-100*/
+        }
+
+        /*Pagination Buttons*/
+        .dataTables_wrapper .dataTables_paginate .paginate_button {
+            font-weight: 700;
+            /*font-bold*/
+            border-radius: .25rem;
+            /*rounded*/
+            /*border border-transparent*/
+        }
+
+        /*Pagination Buttons - Current selected */
+        .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+            color: #fff !important;
+            /*text-white*/
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06);
+            /*shadow*/
+            font-weight: 700;
+            /*font-bold*/
+            border-radius: .25rem;
+            /*rounded*/
+            background: #000 !important;
+            /*bg-indigo-500*/
+            transform: perspective();
+            transition-duration: 500ms;
+            /*border border-transparent*/
+        }
+
+        /*Pagination Buttons - Hover */
+        .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+            color: rgb(39, 36, 36) !important;
+            /*text-white*/
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06);
+            /*shadow*/
+            font-weight: 700;
+            /*font-bold*/
+            border-radius: .25rem;
+            /*rounded*/
+            background: #FFF !important;
+            /*bg-indigo-500*/
+            /*border border-transparent*/
+        }
+
+        /*Add padding to bottom border */
+        table.dataTable.no-footer {
+            border-bottom: 1px solid #fff;
+            /*border-b-1 border-gray-300*/
+            margin-top: 0.75em;
+            margin-bottom: 0.75em;
+        }
+
+        /*Change colour of responsive icon*/
+        table.dataTable.dtr-inline.collapsed>tbody>tr>td:first-child:before,
+        table.dataTable.dtr-inline.collapsed>tbody>tr>th:first-child:before {
+            background-color: #667eea !important;
+            /*bg-indigo-500*/
+        }
+        .bg-brown {
+        background-color: #221802;
+
+        }   
 
 </style>
 {{-- Contenido --}}
-<body></body>
+<body>
     @yield('content')
 </body>
 
 {{-- Footer --}}
-<footer class="gradient-2 p-7  mt-10 text-white">
-    <div class="container px-6 py-4 mx-auto">
+<footer class="gradient-2 px-7 pt-7 pb-1  text-white">
+    <div class="container px-6 pt-4 pb-1 mx-auto">
         <div class="lg:flex">
             <div class="w-full -mx-6 lg:w-2/5">
                 <div class="px-6">
                     <div>
-                        <a href="#" class="text-xl font-bold text-blue-800 dark:text-white hover:text-gray-700 dark:hover:text-gray-300">T salas H</a>
+                        <a href="#" class="text-2xl font-bold text-white-800 dark:text-white hover:text-gray-700 dark:hover:text-gray-300">T salas H</a>
                     </div>
                     
                     <p class="max-w-md mt-2 text-gray-200 dark:text-gray-400">Estamos ubicados en el municipio de Rovira en el departamento del Tolima</p>
@@ -213,9 +248,8 @@
             </div>
         </div>
 
-        <hr class="h-px my-6 bg-gray-300 border-none dark:bg-gray-700">
-
-        <div>
+        <hr class="h-px my-1 bg-gray-300 border-none dark:bg-gray-700">
+        <div class="bottom-0" >
             <p class="text-center text-gray-400 dark:text-white">© TSalasH Heladería del Parque 2022 - Todos los derechos reservados</p>
         </div>
     </div>

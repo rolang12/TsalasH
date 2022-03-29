@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Order;
+use App\Models\Product;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,8 +19,10 @@ class ProductOrderFactory extends Factory
     public function definition()
     {
         return [
-            'products_id' => $this->faker->numberBetween(1 ,40),
-            'orders_id' => $this->faker->numberBetween(1 ,40),
+            'products_id' => Product::all(['id'])->random(),
+            'orders_id' => Order::all(['id'])->random(),
+            // 'products_id' => $this->faker->numberBetween(1 ,40),
+            // 'orders_id' => $this->faker->numberBetween(1 ,40),
             'quantity' => $this->faker->numberBetween(1 ,10)
         ];
     }

@@ -14,7 +14,8 @@ class Product extends Model
         'price',
         'amount',
         'stock_min',
-        'categories_id'
+        'categories_id',
+        'sabors_id',
     ];
 
     public function productOrder() {
@@ -34,6 +35,7 @@ class Product extends Model
         return $this->hasOne(Sabor::class);
 
     }
+
 
 
 }

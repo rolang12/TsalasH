@@ -3,6 +3,24 @@
 @section('content')
 
     <style>
+        h2 {
+        animation-duration: 3s;
+        animation-name: slidein;
+        animation-delay: 1s;
+        }
+
+        @keyframes slidein {
+            from {
+                margin-left: 100%;
+                width: 300%
+                
+            }
+
+            to {
+                margin-left: 0%;
+                width: 100%;
+            }
+        }
         .carousel-open:checked+.carousel-item {
         position: static;
         opacity: 100;
@@ -50,15 +68,15 @@
                             <img
                             src="https://img.besthqwallpapers.com/Uploads/25-8-2017/19369/fruit-ice-cream-4k-dessert-ice-cream-balls-berries.jpg"
                             class="w-full hover:contrast-150 duration-700 brightness-50 h-96 md:h-auto md:w-full lg:w-full xl:w-full " alt="">        
-                            <div class="centrado text-white md:text-5xl  text-xl font-bold">Bienvenid@s a TsalasH Delicias del Parque, adentra tu paladar a nuestros deliciosos sabores! </div>
+                            <div class="centrado text-white md:text-5xl font-principal text-xl font-semilight">Bienvenid@s a TsalasH Delicias del Parque, adentra tu paladar a nuestros deliciosos sabores! </div>
                         </div>
 
                 </div>
             </div>
             <label for="carousel-3"
-                class="prev control-1 w-10 h-10  absolute cursor-pointer hidden text-3xl font-bold text-white hover:text-gray-900 rounded-full bg-gray-900 hover:bg-white leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+                class="prev control-1 w-15 h-10  absolute cursor-pointer hidden text-3xl font-bold text-white hover:text-gray-900 rounded-full bg-gray-900 hover:bg-white leading-tight text-center z-50 inset-y-0 left-0 my-auto">‹</label>
             <label for="carousel-2"
-                class="next control-1 w-10 h-10  absolute cursor-pointer hidden text-3xl font-bold text-white hover:text-gray-900 rounded-full bg-gray-900 hover:bg-white leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+                class="next control-1 w-10 h-10  absolute cursor-pointer hidden text-3xl font-bold text-white hover:text-gray-900 rounded-full bg-gray-900 hover:bg-white leading-tight text-center z-50 inset-y-0 right-0 my-auto">›</label>
 
             <!--Slide 2-->
             <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
@@ -68,51 +86,48 @@
                         <!--<img src="https://s1.best-wallpaper.net/wallpaper/m/1706/Ice-cream-strawberry-dessert_m.webp"-->
                         <img src="https://s1.1zoom.me/big3/60/Sweets_Ice_cream_Balls_Multicolor_531419_4800x3200.jpg"
                             class="w-full hover:contrast-150 duration-700 brightness-50  h-96 md:h-auto  md:w-full lg:w-full xl:w-full" alt="" >
-                        <div class="centrado text-white md:text-5xl text-xl font-bold  ">Disfruta de una experiencia única, incluso en la comodidad de tu casa!</div>
+                        <div class="centrado text-white md:text-5xl text-xl font-bold font-principal ">Disfruta de una experiencia única, incluso en la comodidad de tu casa!</div>
                     </div>
                 </div>
             </div>
 
             <label for="carousel-1"
-                class="prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold  text-white hover:text-gray-900 rounded-full bg-gray-900 hover:bg-white leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+                class="prev z-50 control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold  text-white hover:text-gray-900 rounded-full bg-gray-900 hover:bg-white leading-tight text-center  inset-y-0 left-0 my-auto">‹</label>
             <label for="carousel-3"
-                class="next control-2 w-10 h-10  absolute cursor-pointer hidden text-3xl font-bold  text-white hover:text-gray-900 rounded-full bg-gray-900 hover:bg-white leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+                class="next z-50 control-2 w-10 h-10  absolute cursor-pointer hidden text-3xl font-bold  text-white hover:text-gray-900 rounded-full bg-gray-900 hover:bg-white leading-tight text-center inset-y-0 right-0 my-auto">›</label>
 
             <!--Slide 3-->
             <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
             <div class="carousel-item absolute opacity-0" style="height:50vh;">
                 <div class="block  h-auto md:h-screen w-full bg-green-500 text-white text-5xl text-center">
                     <div class="contenedorimg">
-                    <!--<img src="https://www.semana.com/resizer/oOiCKGYoXtnq70nDtg-vb3nqDhQ=/1200x675/filters:format(jpg):quality(50)//cloudfront-us-east-1.images.arcpublishing.com/semana/QIQLCVJWQ5FEJFIOEXC5JW6XGE.jpg"-->
                     <img src="https://elifeenespanol.com/wp-content/uploads/2016/11/Fast-food.jpg"
                         class="w-full hover:contrast-150 duration-700 brightness-50 md:w-full h-96 md:h-auto  lg:w-full xl:w-full" alt=""></div>
-                        <div class="centrado text-white md:text-5xl text-xl font-bold  ">Tenemos un gran variedad para todos</div>
+                        <div class="centrado text-white md:text-5xl text-xl font-light font-principal-n ">Tenemos un gran variedad para todos</div>
                     </div>
             </div>
             <label for="carousel-2"
-                class="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold  text-white hover:text-gray-900 rounded-full bg-gray-900 hover:bg-white leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+                class="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold  text-white hover:text-gray-900 rounded-full bg-gray-900 hover:bg-white leading-tight text-center z-50 inset-y-0 left-0 my-auto">‹</label>
             <label for="carousel-1"
-                class="next control-3 w-10 h-10  absolute cursor-pointer hidden text-3xl font-bold  text-white hover:text-gray-900 rounded-full bg-gray-900 hover:bg-white leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+                class="next control-3 w-10 h-10  absolute cursor-pointer hidden text-3xl font-bold  text-white hover:text-gray-900 rounded-full bg-gray-900 hover:bg-white leading-tight text-center z-50 inset-y-0 right-0 my-auto">›</label>
 
             <!-- Puntos de posición de usuario-->
             <ol class="carousel-indicators">
-                <li class="inline-block mr-3">
-                    <label for="carousel-1"
-                        class="carousel-bullet cursor-pointer block  text-4xl  text-gray-400 hover:text-gray-600">•</label>
+                <li class="inline-block mr-3 ">
+                    <label for="carousel-1 "
+                        class="carousel-bullet  cursor-pointer block  text-4xl  text-gray-400 hover:text-gray-600">•</label>
                 </li>
                 <li class="inline-block mr-3">
                     <label for="carousel-2"
-                        class="carousel-bullet cursor-pointer block text-4xl  text-gray-400 hover:text-gray-600">•</label>
+                        class="carousel-bullet  cursor-pointer block text-4xl  text-gray-400 hover:text-gray-600">•</label>
                 </li>
-                <li class="inline-block mr-3">
+                <li class="inline-block mr-3 ">
                     <label for="carousel-3"
                         class="carousel-bullet cursor-pointer block text-4xl  text-gray-400 hover:text-gray-600">•</label>
                 </li>
             </ol>
         </div>
     </div>
-
-   
 
     @if (count(Cart::getContent()))
 
@@ -126,34 +141,74 @@
         
     @endif
 
-
-    <div class="bg-purple-300 md:mt-0 -mt-5 min-h-screen py-9 ">
-       
-        <div class="text-white text-5xl text-center  z-50 font-bold pb-12">Helados</div>
-        <livewire:index.helados/>
+    <div class="left-80 w-1/2 absolute z-30 top-0" >
         <livewire:messages.success-product/>
+    </div>
+
+    <div class="left-80 w-1/2 absolute z-30 top-0" >
+        @include('livewire.messages.errors') 
+    </div>
+        
+    <div class="bg-white md:mt-0 -mt-5 min-h-screen py-9 ">
+       
+        <h2 class="text-black font-principal text-5xl text-center  z-50 font-semibold pb-12">Helados</h2>
+        <livewire:index.helados/>
         
     </div>
  
-    <div class="bg-orange-900 min-h-screen py-9">
+    <div class="bg-blue-300 min-h-screen py-9">
         
-        <div class="text-white text-5xl text-center z-50 font-bold pb-12">Comidas Rápidas</div>
+        <h2  class="text-white font-principal text-5xl text-center z-50 font-semibold pb-12">Comidas Rápidas</h2>
 
         <livewire:index.comidas/>
 
     </div>
 
-    <div class="bg-blue-400 min-h-screen py-9">     
-        <div class="text-white text-5xl text-center z-50 font-bold pb-12">Bebidas</div>
+    <div class="bg-white min-h-screen py-9">     
+        <h2  class="text-black font-principal text-5xl text-center z-50 font-semibold pb-12">Bebidas</h2>
 
         <livewire:index.bebidas/>
 
     </div>
 
+    <div class="bg-black  ">
+        
+        <livewire:index.categorias/>
+    
+    </div>
+
+    <div class="bg-white  border-black ">
+        <hr class="mx-20" >
+        <livewire:index.comments/>
+        
+    </div>
+
+
+
     <div>
 
-        <livewire:index.categorias/>
+        <div class="flex justify-center my-3 items-center p-7 bg-gradient-to-l from-white to-violet-100">
 
-    </div> 
+            <div class="h-80 px-7 w-[700px] rounded-[12px]  p-4">
+
+                <p class="md:text-2xl text-lg font-semibold text-gray-700  transition-all hover:text-sky-600">
+                    Danos tu Opinión
+                </p>
+
+                {{ Form::open(['route' => 'comments.store-comments', 'class' => 'text-center  mx-auto ']) }}
+
+                {{ Form::textarea('content', null, ['class' => 'h-40 bg-transparent px-3 text-md py-1 mt-5 outline-none border-pink-300 w-full resize-none border rounded-lg ','required','placeholder' => 'Agrega tu comentario aquí']) }}
+
+                <div class="flex justify-between mt-2"> {!! Form::submit('Comentar', ['class' => 'h-12 w-[150px] border border-pink-300 text-basic text-gray-700 rounded-lg transition-all  cursor-pointer hover:text-white hover:bg-purple-400']) !!}
+                    <p class="text-sm text-gray-700 ">Debe tener al menos 10 caracteres</p>
+                </div>
+
+                {!! Form::close() !!}
+
+            </div>
+
+        </div>
+
+    </div>
 
 @endsection

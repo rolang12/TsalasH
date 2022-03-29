@@ -16,10 +16,10 @@
 	<div class="row">
 		<div class="mt-16  ">
 
-            {!!  Form::open(['route' => 'products.crud.store' ] ) !!}
+            {!!  Form::open(['route' => 'products.crud.store', 'methos' => 'POST','files' => true  ] ) !!}
 			{{-- {!! Form::model(['route' => 'user.user.store', 'method' => 'POST', 'novalidate']) !!} --}}
-            {!! Form::hidden('users_id', Auth::user()->id;) !!}
-            {!! Form::hidden('place', 'local';) !!}
+            {!! Form::hidden('users_id', Auth::user()->id) !!}
+            {!! Form::hidden('place', 'local') !!}
 
             <div class="w-screen h-screen pt-36 gradient  space-y-4 border border-pink-700 shadow-xl mx-auto px-96 text-center "   >   
                 <div class="form-group grid grid-cols-2  ">
@@ -47,8 +47,10 @@
 
                     <select class=" w-full p-3 rounded-lg bg-transparent text-white " name="categories_id" :value="old('categories_id')">
                         <option class="bg-transparent text-light text-base text-gray-700 p-4" value="1">Helado</option>
-                        <option class="bg-transparent text-light text-base text-gray-700 p-4" value="2">Comida Rápida</option>
-                        <option class="bg-transparent text-light text-base text-gray-700 p-4" value="3">Bebida</option>
+                        <option class="bg-transparent text-light text-base text-gray-700 p-4" value="2">Bebidas Frías</option>
+                        <option class="bg-transparent text-light text-base text-gray-700 p-4" value="3">Bebidas Calientes</option>
+                        <option class="bg-transparent text-light text-base text-gray-700 p-4" value="4">Comida Rápida</option>
+                        <option class="bg-transparent text-light text-base text-gray-700 p-4" value="5">Carnes</option>
                                
                     </select>
                 </div>

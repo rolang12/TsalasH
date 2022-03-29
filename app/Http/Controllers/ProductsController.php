@@ -38,24 +38,30 @@ class ProductsController extends Controller
      */
     public function store(StoreProductRequest $request)
     {
-        
-        $product = new Product();
 
-        $destination_path = 'public/images';
-        $image = $request->file('media');
-        $image_name = $image->getClientOriginalName();
-        $path = $request->file('media')->storeAs($destination_path, $image_name);
-        $product['file'] = $image_name;
+        if ($request = $request->validated()){
+            $product = new Product();
 
-        $product->name         = $request->name;
-        $product->price        = $request->price;
-        $product->stock_min    = $request->stock_min;
-        $product->description     = $request->description;
-        $product->categories_id     = $request->categories_id;
-        $product->save();
+            $destination_path = 'public/images';
+            $image = $request->file('media');
+            $image_name = $image->getClientOriginalName();
+            $path = $request->file('media')->storeAs($destination_path, $image_name);
+            $product->file = $image_name;
 
-        return redirect()->route('products.crud.show')->with('status','Producto agregado Satisfactoriamente!');
-        
+            $product->name         = $request->name;
+            $product->price        = $request->price;
+            $product->stock_min    = $request->stock_min;
+            $product->description     = $request->description;
+            $product->categories_id     = $request->categories_id;
+            $product->save();
+
+            return redirect()->route('products.crud.show')->with('status','Producto agregado Satisfactoriamente!');
+            
+
+        }
+
+        return redirect()->back()->withErrors($request);
+       
     }
 
     /**

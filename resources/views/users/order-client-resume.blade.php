@@ -1,31 +1,23 @@
-{{-- {{dd($orders)}} --}}
+ {{-- {{dd($orders)}}  --}}
 @extends('layouts.layout')
 
 @section('content')
     
+{{-- Esta es la factura final final --}}
     
 <div class="invisible" > {{$total = 0}}</div>
-    
+    {{dd($orders)}}
 
 <div>
     <h2 class="ml-20 font-semibold text-4xl text-left mt-28 " >Datos del Pedido:</h2>
-    {{-- {{ dd($orders) }} --}}
+    
     <div class="invisible" >
-        {{-- @foreach ($orders as $order )
-        {{$id = $order->order->id}}
-            
-        @endforeach --}}
+        
     </div>
-    {{-- @php
-                if $orders->has(['order']) {
-                $id = $order->order->id 
-                }
-            @endphp 
-     --}}
-      
+    
     <table class="ml-16 py-3   " >
         <tr >
-            <td class="px-6 py-2 font-semibold" >Fecha:</td> <td> {{ $fechaActual = date ( 'd-m-Y H:i:s' );}} </td> 
+            <td class="px-6 py-2 font-semibold" >Fecha:</td> <td> {{ $fechaActual = date ( 'd-m-Y H:i:s' )}} </td> 
         </tr>
         <tr>
             <td class="px-6 py-2 font-semibold" >ID Pedido:</td> <td>id</td> 

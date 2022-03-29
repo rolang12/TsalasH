@@ -33,7 +33,7 @@
                     <th class="text-left" data-priority="2">Usuario</th>
                     <th class="text-left" data-priority="2">Hora Pedido</th>
                     <th class="text-left" data-priority="3">Estado</th>
-                    <th data-priority="4">Lugar</th>
+                    <th class="text-left" data-priority="4">Lugar</th>
                     <th data-priority="6">View</th>
                     <th data-priority="7">Edit</th>
                     <th data-priority="8">Delete</th>
@@ -51,8 +51,8 @@
                         <td class="text-center  ">{{ $order->id }}</td>
                         <td class="text-left  ">{{ $order->users_id }}</td>
                         <td class="text-left  ">{{ $order->created_at}}</td>
-                        <td class="text-center  ">{{ $order->status }}</td>
-                        <td class="text-center  ">{{ $order->place }}</td>
+                        <td class="text-left  ">{{ $order->status }}</td>
+                        <td class="text-left  ">{{ $order->place }}</td>
 
                         <td class="text-center hover-text-green-600 text-green-300"><a
                             href="{{ route('orders.crud.show-order',['id' => $order->id], Crypt::encrypt($order->id)) }}">
@@ -78,9 +78,6 @@
 
     </div>
     
-    <a href="{{route('orders.crud.create')}} ">
-        <div class="p-5 bg-green-600 ml-5 mt-5 font-bold text-white w-40" >Crear ordero</div>
-    </a>
     
     <a href="{{route('orders.orders-resume')}} ">
         <div class="p-5 bg-green-600 ml-5 mt-5 font-bold text-white w-40" >Ver Ordenes Del Dia</div>

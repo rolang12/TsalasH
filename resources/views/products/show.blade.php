@@ -23,7 +23,7 @@
         <img  class="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src="{{ asset('/storage/images/'.$product->file)}}">
         <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
           <h2 class="text-sm title-font text-gray-500 tracking-widest">Categoría: {{$product->category->name}}</h2>
-          <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">{{$product->name}}</h1>
+          <h1 class="text-gray-900 text-3xl title-font font-principal font-medium mb-1">{{$product->name}}</h1>
           <div class="flex mb-4 ">
             <span class="flex ml-3 pl-3 py-2 border-l-2 border-gray-200 space-x-2s">
               <a class="text-gray-500">
@@ -48,14 +48,16 @@
           <div class="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
 
           </div>
-          <div class="">
-            <span class="title-font font-medium text-2xl text-gray-900">Precio: ${{$product->price}}</span>
+          
+            <div class="grid grid-row-2  ">
 
-            <!-- Si el producto no es de categoria helado se llama la vista sin opcion de sabores -->
-            @if ($product->categories_id != 1)
+              <div class="title-font font-medium text-2xl text-gray-900">Precio: ${{$product->price}}</div>
 
-              @livewire('products.order-single', ['product' => $product], key($product->id))
-
+              <!-- Si el producto no es de categoria helado se llama la vista sin opcion de sabores -->
+              @if ($product->categories_id != 1)
+              
+                @livewire('products.order-single', ['product' => $product], key($product->id))
+            </div>
             @else
               
               @if ($product->id == 6)
@@ -78,7 +80,7 @@
 
             @endif
             
-          </div>
+          
         </div>
       </div>
     </div>

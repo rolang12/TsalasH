@@ -76,7 +76,7 @@
         @endforeach
         </div>
         
-        <button  type="submit" id="btn1" name="btn" value="Añadir al Carrito" class="flex my-5 text-white bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded"> 
+        <button  type="submit" id="btn1" name="btn" value="Añadir al Carrito" class="flex my-5 font-semibold float-right text-white bg-purple-500 border-0 py-2 px-6 focus:outline-none hover:bg-purple-600 rounded"> 
            Añadir al Carrito
         </button>
 

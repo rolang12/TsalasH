@@ -19,9 +19,10 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             CategorySeeder::class,
             ProductSeeder::class,
-            OrderSeeder::class,
             SaborStockSeeder::class,
+            OrderSeeder::class,
             ProductOrderSeeder::class,
+            CommentSeeder::class,
         ]);
     }
 }

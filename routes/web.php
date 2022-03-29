@@ -112,7 +112,7 @@ Route::name('orders.')
     Route::get('/orders-resume', [App\Http\Controllers\OrdersController::class, 'orderResume'])
         ->name('orders-resume');
 
-    Route::get('/orders-client-resume/{orderid}/{sabores}', [App\Http\Controllers\OrdersController::class, 'orderClientResume'])
+    Route::get('/orders-client-resume/{orderid}', [App\Http\Controllers\OrdersController::class, 'orderClientResume'])
         ->name('orders-client-resume');
 
     Route::get('/order-show', [App\Http\Controllers\OrdersController::class, 'show'])
@@ -130,4 +130,17 @@ Route::name('orders.')
     Route::get('/order-destroy/{id}', [App\Http\Controllers\OrdersController::class, 'destroy'])
         ->name('crud.destroy');
 
+});
+
+
+
+Route::name('comments.')
+    ->middleware('auth:sanctum')
+    ->group( function() {
+
+    Route::post('store-comments', [App\Http\Controllers\CommentController::class, 'store'])
+    ->name('store-comments');
+
+    Route::get('/order-create', [App\Http\Controllers\CommentController::class, 'delete'])
+    ->name('delete-comments');
 });
