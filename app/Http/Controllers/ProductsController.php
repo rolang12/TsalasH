@@ -70,6 +70,7 @@ class ProductsController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
+
     public function show(Product $product)
     {
         $products = Product::with('category')
@@ -86,6 +87,18 @@ class ProductsController extends Controller
         ->first();
                 
         return view('products.show', compact('product'));
+
+    }
+
+    public function showAdminProduct($id)
+    {
+        $id = decrypt($id);
+
+        $product   = Product::with('category')
+        ->where('id', $id)
+        ->first();
+                
+        return view('products.show-admin', compact('product'));
 
     }
 
@@ -117,6 +130,9 @@ class ProductsController extends Controller
         $product->name         = $request->name;
         $product->price        = $request->price;
         $destination_path = 'public/images';
+
+        if ($request->file('media') != null) {
+
         $image = $request->file('media');
         $image_name = $image->getClientOriginalName();
         $path = $request->file('media')->storeAs($destination_path, $image_name);
@@ -124,6 +140,8 @@ class ProductsController extends Controller
         $product->stock_min    = $request->stock_min;
         $product->description     = $request->description;
         $product->save();
+
+        }
 
         return redirect()->route('products.crud.show')->with('status','Producto actualizado Satisfactoriamente!');
         

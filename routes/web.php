@@ -76,6 +76,9 @@ Route::name('products.')
     Route::get('/products-show-product/{id}', [App\Http\Controllers\ProductsController::class, 'showProduct'])
         ->name('crud.show-product');
 
+    Route::get('/products-show-admin-product/{id}', [App\Http\Controllers\ProductsController::class, 'showAdminProduct'])
+        ->name('crud.show-admin-product');
+
     Route::get('/products-edit/{id}', [App\Http\Controllers\ProductsController::class, 'edit'])
         ->name('crud.edit');
 

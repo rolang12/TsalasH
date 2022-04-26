@@ -17,12 +17,14 @@
 
             <div>
                 <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required
+                    autofocus />
             </div>
 
             <div class="mt-4">
                 <x-jet-label for="password" value="{{ __('Contraseña') }}" />
-                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
+                <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required
+                    autocomplete="current-password" />
             </div>
 
             <div class="block mt-4">
@@ -30,24 +32,31 @@
                     <x-jet-checkbox id="remember_me" name="remember" />
                     <span class="ml-2 text-sm text-gray-600">{{ __('Recuerdame') }}</span>
                 </label>
-                
+
             </div>
 
-            <div class="flex items-center justify-evenly mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('register') }}">
-                        {{ __('No tengo cuenta') }}
-                </a>
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('¿Olvidaste tu Contraseña?') }}
-                    </a>
-                @endif
-                
-
-                <x-jet-button class="ml-4">
-                    {{ __('Log in') }}
+            <div class="flex items-center justify-end mt-5">
+                <x-jet-button class="">
+                    {{ __('Ingresar') }}
                 </x-jet-button>
             </div>
+
+            <div class="relative h-10 w-100">
+                <div class="absolute left-0 mt-4">
+                    <a class="underline text-sm  text-gray-600 hover:text-gray-900" href="{{ route('register') }}">
+                        {{ __('No tengo cuenta') }}
+                    </a>
+                </div>
+                <div class="absolute right-0 mt-4">
+                    @if (Route::has('password.request'))
+                        <a class="underline text-sm text-gray-600 hover:text-gray-900"
+                            href="{{ route('password.request') }}">
+                            {{ __('¿Olvidaste tu Contraseña?') }}
+                        </a>
+                    @endif
+                </div>
+            </div>
+
         </form>
     </x-jet-authentication-card>
 </x-guest-layout>
