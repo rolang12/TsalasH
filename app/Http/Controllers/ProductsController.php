@@ -10,16 +10,7 @@ use Illuminate\Support\Facades\Crypt;
 
 class ProductsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        // Auth::user()->id;
-    }
-
+   
     /**
      * Show the form for creating a new resource.
      *
@@ -39,9 +30,10 @@ class ProductsController extends Controller
     public function store(StoreProductRequest $request)
     {
 
-        if ($request = $request->validated()){
+        // dd($request);
+        if ($data = $request->validated()){
+            
             $product = new Product();
-
             $destination_path = 'public/images';
             $image = $request->file('media');
             $image_name = $image->getClientOriginalName();

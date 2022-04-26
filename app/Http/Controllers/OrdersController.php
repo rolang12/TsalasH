@@ -141,6 +141,7 @@ class OrdersController extends Controller
         ->where('order.status','confirmado')
         ->sortBy('orders_id');
     
+        
         return view('orders.orders-resume',compact('orders'));
 
     }

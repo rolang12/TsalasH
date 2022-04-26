@@ -25,7 +25,7 @@ class CartController extends Controller
         $product = Product::find($request->id);
         
         if ($request->quantity > $product->stock_min) {
-            return back()->with('status',"Has pedido una cantidad incorrecta, stock máximo alcanzado.");
+            return back()->withErrors("Has pedido una cantidad incorrecta, stock máximo alcanzado.");
         }
 
         $product->quantity = $request->quantity;

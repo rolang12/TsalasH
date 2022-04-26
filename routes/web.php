@@ -92,12 +92,20 @@ Route::name('products.')
 
 
 
-Route::get('/sabors', [App\Http\Livewire\Sabores::class, 'render'])
-        ->name('sabors');
-Route::get('/sabors-edit/{id}', [App\Http\Livewire\Sabores::class, 'edit'])
-        ->name('sabors.edit');
-Route::put('/sabores-update', [App\Http\Livewire\Sabores::class, 'update'])
-        ->name('sabores.update');
+Route::name('sabors.')
+    ->middleware('auth:sanctum')
+    ->group( function() {
+
+    Route::get('/sabors', [App\Http\Livewire\Sabores::class, 'render'])
+            ->name('sabors');
+    Route::get('/sabores-edit/{id}', [App\Http\Livewire\Sabores::class, 'edit'])
+            ->name('sabores-edit');
+    Route::put('/sabores-update', [App\Http\Livewire\Sabores::class, 'update'])
+            ->name('sabores-update');
+    Route::get('/sabores-destroy/{id}', [App\Http\Livewire\Sabores::class, 'destroy'])
+            ->name('sabores-destroy');
+
+});
 
 
 
@@ -134,8 +142,6 @@ Route::name('orders.')
         ->name('crud.destroy');
 
 });
-
-
 
 Route::name('comments.')
     ->middleware('auth:sanctum')

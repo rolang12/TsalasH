@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Sabor;
 use App\Models\SaborStock;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
@@ -31,7 +32,17 @@ class Sabores extends Component
         $sabor = SaborStock::find($request->id);
         $sabor->status         = $request->status;
         $sabor->save();
-        return redirect()->route('sabors')->with('status','Orden actualizada Satisfactoriamente!');
+        return redirect()->route('sabors')->with('status','Sabor Actualizado!');
 
     }
+
+    public function destroy($id)
+    {
+        $id = Crypt::decrypt($id);
+        SaborStock::findOrFail($id)->delete();
+
+        return redirect()->route('sabors.sabors')->with('status','Sabor Eliminado!');
+
+    }
+
 }
