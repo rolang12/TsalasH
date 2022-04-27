@@ -1,5 +1,7 @@
 @extends('layouts.layout')
 
+@section('title', 'Ordenes')
+
 @section('content')
     <!--Card-->
 

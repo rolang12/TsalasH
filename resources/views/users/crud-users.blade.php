@@ -1,5 +1,7 @@
 @extends('layouts.layout')
 
+@section('title', 'Usuarios')
+
 @section('content')
     <livewire:messages.success-product />
 

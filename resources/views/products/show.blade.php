@@ -1,5 +1,7 @@
 @extends('layouts.layout')
 
+@section('title', "{$product->name}")
+
 @section('content')
 
     <img alt="" class="w-max" />

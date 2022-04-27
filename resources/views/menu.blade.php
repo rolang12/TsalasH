@@ -1,5 +1,7 @@
 @extends('layouts.layout')
 
+@section('title', 'Menú')
+
 @section('content')
     <livewire:messages.success-product />
     <livewire:messages.error-product />
@@ -66,37 +68,52 @@
 
     </div>
 
+    <div class="py-10">
+        <h2 class="text-center font-principal font-bold text-4xl text-purple-500 pb-8">Categorias</h2>
+
+        <ul class="inline-block animate-pulse flex text-2xl justify-center font-light space-x-8">
+            <li><a href="#helados"> Helados</a></li>
+            <li><a href="#bebidas-frias"> Bebidas Frias</a></li>
+            <li><a href="#bebidas-calientes"> Bebidas Calientes</a></li>
+            <li><a href="#comidas-rapidas">Comidas Rápidas</a></li>
+            <li><a href="#carnes">Carnes </a> </li>
+        </ul>
+
+
+    </div>
+
+
     <!-- Fin de Recent Posts -->
 
-    <div class="bg-purple-200 min-h-screen py-9 ">
+    <div id="helados" class="bg-purple-200 min-h-screen py-9 ">
 
         <h2 class="text-white font-principal text-5xl text-center  z-50 font-bold pb-12">Helados</h2>
         <livewire:menu.helados />
 
     </div>
 
-    <div class="bg-white min-h-screen py-9 ">
+    <div id="bebidas-frias" class="bg-white min-h-screen py-9 ">
 
         <h2 class="text-pink-200 font-principal text-5xl text-center z-50 font-bold pb-12">Bebidas Frías</h2>
         <livewire:menu.bebidas-frias />
 
     </div>
 
-    <div class="bg-cyan-200 min-h-screen py-9 ">
+    <div id="bebidas-calientes" class="bg-cyan-200 min-h-screen py-9 ">
 
         <h2 class="text-white font-principal text-5xl text-center z-50 font-bold pb-12">Bebidas Calientes</h2>
         <livewire:menu.bebidas-calientes />
 
     </div>
 
-    <div class=" min-h-screen py-9 ">
+    <div id="comidas-rapidas" class=" min-h-screen py-9 ">
 
         <h2 class="text-cyan-200 font-principal text-5xl text-center z-50 font-bold pb-12">Comidas Rápidas</h2>
         <livewire:menu.comidas-rapidas />
 
     </div>
 
-    <div class=" bg-blue-200  min-h-screen py-9 ">
+    <div id="carnes" class=" bg-blue-200  min-h-screen py-9 ">
 
         <h2 class="text-white font-principal text-5xl text-center z-50 font-bold pb-12">Carnes</h2>
         <livewire:menu.carnes />
