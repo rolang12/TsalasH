@@ -32,7 +32,7 @@ class Sabores extends Component
         $sabor = SaborStock::find($request->id);
         $sabor->status         = $request->status;
         $sabor->save();
-        return redirect()->route('sabors')->with('status','Sabor Actualizado!');
+        return redirect()->route('sabors.sabors')->with('status','Sabor Actualizado!');
 
     }
 

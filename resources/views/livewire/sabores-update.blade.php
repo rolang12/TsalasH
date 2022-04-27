@@ -5,7 +5,7 @@
         <div class="row">
             <div class="mt-16  ">
 
-                {!! Form::model($sabor, ['route' => 'sabores.update', 'method' => 'put', 'novalidate', 'files' => true]) !!}
+                {!! Form::model($sabor, ['route' => 'sabors.sabores-update', 'method' => 'put', 'novalidate', 'files' => true]) !!}
 
                 {!! Form::hidden('id', $sabor->id) !!}
                 <div
