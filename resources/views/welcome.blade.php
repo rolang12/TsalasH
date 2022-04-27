@@ -4,15 +4,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="images/icono.png">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="/dist/output.css" rel="stylesheet">
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/938/938063.png">
     <meta name="description" content="Simple landind page" />
     <meta name="keywords" content="" />
     <meta name="author" content="" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="images/icono.png">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="/dist/output.css" rel="stylesheet">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/938/938063.png">
+
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
@@ -20,135 +21,17 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <title>TsalasH</title>
 
-    <style>
-        .gradient {
-            background: linear-gradient(90deg, #78c7ec 10%, #ebb9e8 90%);
-        }
-
-        .bg-brown {
-            background-color: #221802;
-
-        }
-
-        .gradient-2 {
-            background: linear-gradient(10deg, #246280 0%, #803b7b 100%);
-        }
-
-        body {
-            font-family: 'Nunito', sans-serif;
-            overflow-x: hidden;
-        }
-
-        ::-webkit-scrollbar {
-            display: none;
-        }
-
-        /* Non essential CSS - Just for example centering */
-
-        html {
-            background-color: #ff6f69;
-            background: radial-gradient(#ff6f69, #ff8b87);
-            overflow-x: hidden;
-        }
-
-        .border2 {
-
-            background: linear-gradient(110deg, #ffeead 33%, rgba(0, 0, 0, 0) 33%), linear-gradient(110deg, #C5E7D7 34%, #88d8b0 34%);
-            background-size: 400% 400%;
-            height: 400px;
-            background-position: 25% 50%;
-            -webkit-animation: Gradient 15s ease infinite;
-            -moz-animation: Gradient 5s ease infinite;
-        }
-
-        .inner-cutout {
-            padding: ;
-            display: block;
-            text-align: center;
-            background-color: #ff6f69;
-            /*#ff6f69*/
-            height: 80%;
-            width: 95%;
-            background: radial-gradient(#ff6f69, #ff8b87);
-            background-size: 300%;
-            background-position: 50% 50%;
-            position: relative;
-
-        }
-
-        .knockout {
-
-            vertical-align: middle;
-            text-align: center;
-            font-family: 'Pacifico', cursive;
-            font-size: 400%;
-            color: blue;
-            color: #fff;
-            background: linear-gradient(110deg, #ffeead 33%, rgba(0, 0, 0, 0) 33%), linear-gradient(110deg, #C5E7D7 34%, #88d8b0 34%);
-            background-size: 100%;
-            -webkit-text-fill-color: transparent;
-            -webkit-background-clip: text;
-
-            top: 50%;
-            left: 50%;
-            position: relative;
-            -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-
-
-        }
-
-        .knockout {
-            animation: Gradient 5s ease infinite;
-            -webkit-animation: Gradient 15s ease infinite;
-            -moz-animation: Gradient 5s ease infinite;
-        }
-
-        @media only screen and (max-width: 600px) and (min-width: 300px) {
-            .knockout {
-                font-size: 300%;
-            }
-
-            .videoyoutube {
-                height: 240px;
-                width: 350px;
-            }
-        }
-
-        /*cuadrar vista en tablet mijo */
-
-        @media only screen and (max-width: 1280px) and (min-width: 601px) {
-            .videoyoutube {
-                height: 360px;
-                width: 400px;
-            }
-        }
-
-        @media only screen and (max-width: 1440px) and (min-width: 1281px) {
-            .videoyoutube {
-                height: 400px;
-                width: 600px;
-            }
-        }
-
-        @-webkit-keyframes Gradient {
-            0% {
-                background-position: 30% 50%
-            }
-
-            50% {
-                background-position: 25% 50%
-            }
-
-            100% {
-                background-position: 30% 50%
-            }
-
-        }
-
-    </style>
 
 </head>
+
+<style>
+    html {
+        background-color: #ff6f69;
+        background: radial-gradient(#ff6f69, #ff8b87);
+        overflow-x: hidden;
+    }
+
+</style>
 
 <body class=" tracking-normal text-white " style="font-family: 'Source Sans Pro', sans-serif;">
 
@@ -192,11 +75,7 @@
             <div class="absolute hidden" id="menu">
                 <!--al añadir el hidden se quita el menu funcionando el script-->
                 <div class="fixed gradient w-full z-40 px-2 pt-20 pb-2 space-y-1">
-                    <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white"
-        <a href="#"  class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium boton">Team 2</a>
-        <a href="#"  class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects 2</a>
-        <a href="#"  class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar 2</a>
-        -->
+
                     @if (Route::has('login'))
                         @auth
                             <a href="{{ url('dashboard') }}"

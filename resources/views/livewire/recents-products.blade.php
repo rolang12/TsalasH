@@ -1,18 +1,18 @@
 <div>
 
-    <div class="bg-black px-3  grid md:grid-cols-4 grid-cols-1 items-center">        
+    <div class="bg-black px-3  grid md:grid-cols-4 grid-cols-1 items-center">
 
         @foreach ($recent as $post)
-
-            <section class="px-4 col gradient-card-recent  transform hover:scale-95 motion-reduce:transform-none hover:brightness-150 duration-500 lg:pt-[20px] pb-5 lg:pb-5 bg-#000">
+            <section
+                class="px-4 col gradient-card-recent  transform hover:scale-95 motion-reduce:transform-none hover:brightness-150 duration-500 lg:pt-[20px] pb-5 lg:pb-5 bg-#000">
 
                 <div class="rounded-lg overflow-hidden ">
-                    <img src="{{ asset('/storage/images/'.$post->file)}}" alt="" class="w-max" />
+                    <img src="{{ asset('/storage/images/' . $post->file) }}" alt="" height="90px" />
 
                     <div class=" p-7 sm:p-9 md:p-4 xl:p-5 text-center">
 
-                        <div class="text-gray-200 pb-2 text-sm text-right"> 
-                            Categoria:  {{ $post->category->name}} </div>
+                        <div class="text-gray-200 pb-2 text-sm text-right">
+                            Categoria: {{ $post->category->name }} </div>
 
                         <h3>
                             <div href="javascript:void(0)"
@@ -28,7 +28,7 @@
                                         mb-4
                                         block">
                                 {{ $post->name }}
-                        </div>
+                            </div>
                         </h3>
 
                         <p class="text-base text-justify break-words text-gray-400 px-5 leading-relaxed mb-7">
@@ -36,7 +36,7 @@
                         </p>
 
                         {{-- }}" --}}
-                        <a href="{{ route('products.crud.show-product', ['id' => $post->id])}}"
+                        <a href="{{ route('products.crud.show-product', ['id' => $post->id]) }}"
                             class="
                             transition ease-in-out delay-150 bg-white
                             hover:-translate-y-1 hover:scale-110 hover:bg-transparent duration-200
@@ -51,7 +51,7 @@
                 </div>
 
             </section>
-
         @endforeach
 
-    </div></div>
+    </div>
+</div>

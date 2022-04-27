@@ -9,10 +9,10 @@
 
                 {!! Form::hidden('id', $sabor->id) !!}
                 <div
-                    class="w-screen h-screen pt-36 bg-white  shadow-xl mx-auto lg:px-96 md:px-20 sm:px-6 space-y-6 text-center 2xl:pt-56 2xl:pb-64 lg:pt-44 lg:pb-48 md:pt-32 md:pb-64 sm:pt-24 sm:pb-40  ">
+                    class="h-screen pt-36 bg-white  shadow-xl mx-auto lg:px-96 md:px-20 sm:px-6 space-y-6 text-center 2xl:pt-56 2xl:pb-64 lg:pt-44 lg:pb-48 md:pt-32 md:pb-64 sm:pt-24 sm:pb-40  ">
 
                     <div class="form-group grid grid-cols-2 ">
-                        {!! Form::label('status', null, ['class' => 'text-black font-semibold text-left']) !!}
+                        {!! Form::label('Estado', null, ['class' => 'text-black font-semibold text-left']) !!}
 
                         <select class=" w-full p-3 rounded-lg bg-transparent text-black " name="status"
                             :value="old('status')">

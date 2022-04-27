@@ -20,6 +20,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
 <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.tailgrids.com/tailgrids-fallback.css" />
+
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
@@ -250,16 +252,7 @@
             </div>
 
             <div class="mt-6 lg:mt-0 lg:flex-1">
-                <div class="grid grid-cols-2 gap-5 sm:grid-cols-3 md:grid-cols-3">
-                    <div>
-                        <h3 class="text-gray-50 uppercase dark:text-white">Acerca de Nosotros</h3>
-                        <a href="#"
-                            class="block mt-2 text-sm text-gray-300 dark:text-gray-400 hover:underline">Company</a>
-                        <a href="#"
-                            class="block mt-2 text-sm text-gray-300 dark:text-gray-400 hover:underline">community</a>
-                        <a href="#"
-                            class="block mt-2 text-sm text-gray-300 dark:text-gray-400 hover:underline">Careers</a>
-                    </div>
+                <div class="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-2">
 
 
 

@@ -6,8 +6,14 @@
           <livewire:messages.success-product />
 
           <!--Card-->
-          <div id='recipients' class="p-10  mb-10 lg:mt-32 md:mt-8 rounded shadow">
 
+          <div class="md:w-auto sm:w-full w-screen md:pb-0 mt-24  ">
+              <h2
+                  class="text-3xl font-bold w-full md:text-left sm:text-center justify-center px-3 sm:ml-4 mr-32 md:mt-0 sm:mt-16">
+                  Tabla de Sabores
+              </h2>
+          </div>
+          <div id='recipients' class="p-10 mb-16 h-screen lg:mt-4 md:mt-10 sm:mt-10 rounded">
               <table id="example" class="stripe hover p-4 w-full pt-4 pb-4"
                   style="width:100%; padding-top: 1em;  padding-bottom: 1em;">
                   <thead>
@@ -21,27 +27,27 @@
 
                       </tr>
                   </thead>
-                  <!--no se que opine de dejar el gris de fondo como en los otros?-->
-                  <tbody></tbody>
+                  <tbody>
 
-                  @foreach ($sabors as $sabor)
-                      <tr>
+                      @foreach ($sabors as $sabor)
+                          <tr>
 
-                          <td class="text-center  ">{{ $sabor->id }}</td>
-                          <td class="text-left  ">{{ $sabor->sabor }}</td>
-                          <td class="text-left  ">{{ $sabor->status }}</td>
+                              <td class="text-center  ">{{ $sabor->id }}</td>
+                              <td class="text-left  ">{{ $sabor->sabor }}</td>
+                              <td class="text-left  ">{{ $sabor->status }}</td>
 
-                          <td class="text-center hover-text-blue-600 text-blue-300 "><a
-                                  href="{{ route('sabors.sabores-edit', Crypt::encrypt($sabor->id)) }}">
-                                  <button><i class="far fa-edit"></i></button></a>
-                          </td>
-                          <td class="text-center hover-text-red-600 font-bold "><a
-                                  href="{{ route('sabors.sabores-destroy', Crypt::encrypt($sabor->id)) }}">
-                                  <button onclick=" return confirmDelete() "><i
-                                          class="fas text-red-600 fa-trash"></i></button>
-                          </td>
-                      </tr>
-                  @endforeach
+                              <td class="text-center hover-text-blue-600 text-blue-300 "><a
+                                      href="{{ route('sabors.sabores-edit', Crypt::encrypt($sabor->id)) }}">
+                                      <button><i class="far fa-edit"></i></button></a>
+                              </td>
+                              <td class="text-center hover-text-red-600 font-bold "><a
+                                      href="{{ route('sabors.sabores-destroy', Crypt::encrypt($sabor->id)) }}">
+                                      <button onclick=" return confirmDelete() ">
+                                          <i class="fas text-red-600 fa-trash"></i>
+                                      </button>
+                              </td>
+                          </tr>
+                      @endforeach
 
                   </tbody>
 

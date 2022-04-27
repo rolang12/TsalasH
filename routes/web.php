@@ -26,8 +26,8 @@ Route::name('cart.')
         ->name('cart.checkout');
 
     Route::get('/cart-clear', [App\Http\Controllers\CartController::class, 'clear'])
-        ->name('cart.clear');
-
+        ->name('cart-clear');//dice que la ruta cart.clear no esta definidaaaa :(((())))
+        // ES cart.cart-clear ._. o si no no no da
     Route::post('/cart-removeitem', [App\Http\Controllers\CartController::class, 'removeitem'])
         ->name('cart.removeitem');
 
@@ -150,6 +150,6 @@ Route::name('comments.')
     Route::post('store-comments', [App\Http\Controllers\CommentController::class, 'store'])
     ->name('store-comments');
 
-    Route::get('/order-create', [App\Http\Controllers\CommentController::class, 'delete'])
-    ->name('delete-comments');
+    Route::get('delete-comment/{id}', [App\Http\Controllers\CommentController::class, 'destroy'])
+    ->name('delete-comment');
 });

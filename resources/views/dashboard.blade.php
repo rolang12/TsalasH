@@ -220,7 +220,7 @@
 
     @if (count(Cart::getContent()))
         <div
-            class="fixed right-0 text-xl bottom-12 bg-gradient-to-r from-cyan-400 to-pink-400 py-4 px-5  z-50 rounded-lg text-white font-bold animate-pulse duration-300 hover:-translate-x-6 ">
+            class="fixed right-0 text-xl bottom-12 bg-gradient-to-r from-cyan-400 to-pink-400 md:py-4 md:px-5 py-2 px-3 z-50 rounded-lg text-white font-bold animate-pulse duration-300 hover:-translate-x-6 ">
             <a href="{{ route('cart.cart.checkout') }}">
                 Ver
                 <svg class="w-8 h-8 inline-block  " xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 576 512">

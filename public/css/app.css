@@ -6,6 +6,125 @@
 */
 
 /* mis personalizaciones*/
+.gradient {
+  background: linear-gradient(90deg, #78c7ec 10%, #ebb9e8 90%);
+}
+
+.bg-brown {
+  background-color: #221802;
+
+}
+
+.gradient-2 {
+  background: linear-gradient(10deg, #246280 0%, #803b7b 100%);
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Non essential CSS - Just for example centering */
+
+
+.border2 {
+
+  background: linear-gradient(110deg, #ffeead 33%, rgba(0, 0, 0, 0) 33%), linear-gradient(110deg, #C5E7D7 34%, #88d8b0 34%);
+  background-size: 400% 400%;
+  height: 400px;
+  background-position: 25% 50%;
+  -webkit-animation: Gradient 15s ease infinite;
+  -moz-animation: Gradient 5s ease infinite;
+}
+
+.inner-cutout {
+  padding: ;
+  display: block;
+  text-align: center;
+  background-color: #ff6f69;
+  /*#ff6f69*/
+  height: 80%;
+  width: 95%;
+  background: radial-gradient(#ff6f69, #ff8b87);
+  background-size: 300%;
+  background-position: 50% 50%;
+  position: relative;
+
+}
+
+.knockout {
+
+  vertical-align: middle;
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+  font-size: 400%;
+  color: blue;
+  color: #fff;
+  background: linear-gradient(110deg, #ffeead 33%, rgba(0, 0, 0, 0) 33%), linear-gradient(110deg, #C5E7D7 34%, #88d8b0 34%);
+  background-size: 100%;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+
+  top: 50%;
+  left: 50%;
+  position: relative;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+
+}
+
+.knockout {
+  animation: Gradient 5s ease infinite;
+  -webkit-animation: Gradient 15s ease infinite;
+  -moz-animation: Gradient 5s ease infinite;
+}
+
+@media only screen and (max-width: 600px) and (min-width: 300px) {
+  .knockout {
+    font-size: 300%;
+  }
+
+  .videoyoutube {
+    height: 240px;
+    width: 350px;
+  }
+}
+
+/*cuadrar vista en tablet mijo */
+
+@media only screen and (max-width: 1280px) and (min-width: 601px) {
+  .videoyoutube {
+    height: 360px;
+    width: 400px;
+  }
+}
+
+@media only screen and (max-width: 1440px) and (min-width: 1281px) {
+  .videoyoutube {
+    height: 400px;
+    width: 600px;
+  }
+}
+
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 30% 50%
+  }
+
+  50% {
+    background-position: 25% 50%
+  }
+
+  100% {
+    background-position: 30% 50%
+  }
+
+}
 
 .h-100{
   height: 500px;

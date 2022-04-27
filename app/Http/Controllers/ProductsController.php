@@ -135,7 +135,7 @@ class ProductsController extends Controller
 
         }
 
-        return redirect()->route('products.crud.show')->with('status','Producto actualizado Satisfactoriamente!');
+        return redirect()->route('products.crud.show')->with('status','Producto actualizado Exitosamente!');
         
     }
 
@@ -150,7 +150,7 @@ class ProductsController extends Controller
         $id = Crypt::decrypt($id);
         Product::findOrFail($id)->delete();
 
-        return redirect()->back()->with('status','Producto borrado Satisfactoriamente!');
+        return redirect()->back()->with('status','Comentario borrado Exitosamente!');
     
     }
 }

@@ -81,7 +81,7 @@ class OrdersController extends Controller
         }
         
         // VICTOR Aqui es donde se tiene que enviar la Data a la vista
-
+        return view('orders.factura');
         // $product = Cart::clear();
         
     }
