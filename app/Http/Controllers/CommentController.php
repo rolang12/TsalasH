@@ -7,35 +7,12 @@ use App\Http\Requests\StoreCommentRequest;
 use App\Http\Requests\UpdateCommentRequest;
 use App\Models\Order;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Crypt;
 
 class CommentController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreCommentRequest  $request
-     * @return \Illuminate\Http\Response
-     */
+    
+   
     public function store(StoreCommentRequest $request)
     {
         
@@ -46,7 +23,7 @@ class CommentController extends Controller
         ->get();
 
         if ($hasOrder->isEmpty()) {
-            return redirect()->back()->withErrors('Debes haber comprado algo antes para poder comentar!');
+            return redirect()->back()->withErrors('¡Debes tener compras registradas para poder comentar!');
         }
 
         $data = $request->validated();
@@ -59,7 +36,7 @@ class CommentController extends Controller
 
             $user = Comment::create($data);
 
-            return redirect()->back()->with('status','Gracias por enviarnos tu experiencia');
+            return redirect()->back()->with('status','¡Gracias por enviarnos tu experiencia');
         
         }
 
@@ -67,48 +44,13 @@ class CommentController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Comment  $comment
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Comment $comment)
+   
+    public function destroy($id)
     {
-        //
-    }
+         $id = Crypt::decrypt($id);
+        Comment::findOrFail($id)->delete();
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Comment  $comment
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Comment $comment)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateCommentRequest  $request
-     * @param  \App\Models\Comment  $comment
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdateCommentRequest $request, Comment $comment)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Comment  $comment
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Comment $comment)
-    {
-        //
+        return redirect()->back()->with('status','Producto borrado Satisfactoriamente!');
+    
     }
 }

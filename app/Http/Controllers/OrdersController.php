@@ -80,83 +80,20 @@ class OrdersController extends Controller
 
         }
         
-        $product = Cart::clear();
-        
-        return redirect()->route('orders.orders-client-resume',['orderid' => $orderid]);
+        // VICTOR Aqui es donde se tiene que enviar la Data a la vista
+        return view('orders.factura');
+        // $product = Cart::clear();
         
     }
-    
-    public function orderClientResume($orderid)
-    {
-
-        // $sabores = Sabor::with('product')
-        // ->where('orders_id', $orderid)
-        // ->get();
-       
-
-        // $orders = ProductOrder::with('product','order', 'order.user')
-        // ->get()
-        // ->where('order.users_id', Auth::user()->id )
-        // ->where('orders_id', $orderid)
-        // ->sortBy('orders_id');
-
-        // $orders = ProductOrder::with('product','order', 'order.user','product.')
-        // ->get()
-        // ->where('order.users_id', Auth::user()->id )
-        // ->where('orders_id', $orderid)
-        // ->sortBy('orders_id');
-
-        // $orders = ProductOrder::where('product_orders.orders_id','=', $orderid)
-        // ->join('products', 'products.id', '=', 'product_orders.products_id')
-        // ->join('sabors', 'sabors.orders_id', '=', 'product_orders.orders_id')
-        // ->get(['product_orders.products_id', 'product_orders.orders_id',
-        // 'quantity', 'sabors.sabor_selected', 'products.name']);
-
         
-        // $orders = ProductOrder::where('product_orders.orders_id','=', $orderid)
-        // ->where('sabors.products_id','product_orders.products_id')
-        // ->join('products','product_orders.products_id','=','products.id')
-        // ->join('sabors', 'sabors.orders_id', '=', 'product_orders.orders_id')
-        // ->get(['products.name','sabors.products_id', 'product_orders.quantity', 'product_orders.products_id', 'sabors.sabor_selected']);
-    
-        // $orders = ProductOrder::where('product_orders.orders_id','=', $orderid)
-        // ->where('sabors.products_id','product_orders.products_id')
-        // ->join('products','product_orders.products_id','=','products.id')
-        // ->join('sabors', 'sabors.orders_id', '=', 'product_orders.orders_id')
-        // ->get(['products.name','sabors.products_id', 'product_orders.quantity', 'product_orders.products_id', 'sabors.sabor_selected']);
-    
-
-        //IMPORTANTE - AQUI DEBEN CONSULTAR LOS PRODUCTOS PARA COLOCARLOS EN LA FACTURA
-        //ESTA ÚLTIMA CONSULTA ESTÁ CASI BIEN, SOLO QUE DUPLICA LOS PRODUCTOS, ASI QUE
-        //pueden arreglar ese pequeño bug en la consulta
-        //igualmente si quieren probar alguna consulta de las que estén arriba, lo pueden hacer
-        //solo recibe como parametro el id de la orden, que viene desde la función store 
-        //que está en este mismo controlador
-
-        $orders = DB::table('product_orders')
-      ->select(
-        'products.name',
-        'product_orders.quantity',
-        'product_orders.products_id',
-        'sabors.sabor_selected'
-      )
-      ->join('products', 'product_orders.products_id','=','products.id')
-      ->join('sabors','sabors.orders_id','=','product_orders.orders_id')
-      ->where('product_orders.orders_id', '=', 48)
-      ->where('sabors.products_id', '=', 'product_orders.products_id')
-      ->distinct(['sabors.sabor_selected'])->get();
-
-        // $orders = $orders->merge($sabores);
-
-        return view('users.order-client-resume',compact('orders'))->with( 'status', 'Su pedido ha sido enviado exitosamente!');
-    }
    
     /**
      * Display the specified resource.
      *
      * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
-     */
+    */
+
     public function show(Order $order)
     {
         $orders = Order::with('user')
@@ -175,8 +112,7 @@ class OrdersController extends Controller
         $orders = ProductOrder::with('product','order')
         ->where('orders_id', $id)
         ->get();
-
-      
+  
         return view('orders.show-order', compact('orders','user'));
     }
 
@@ -205,6 +141,7 @@ class OrdersController extends Controller
         ->where('order.status','confirmado')
         ->sortBy('orders_id');
     
+        
         return view('orders.orders-resume',compact('orders'));
 
     }

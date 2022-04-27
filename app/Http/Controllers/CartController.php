@@ -3,14 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-use App\Models\ProductOrder;
 use App\Models\Sabor;
-// use Darryldecode\Cart\Cart;
 use Illuminate\Http\Request;
 use Cart;
-use Darryldecode\Cart\Cart as CartCart;
-use Darryldecode\Cart\Validators\Validator;
-
 
 class CartController extends Controller
 {
@@ -19,13 +14,13 @@ class CartController extends Controller
 
         
         if ($request->quantity == 0) {
-            return back()->with('status',"La cantidad debe ser mayor a 0!");
+            return back()->with('status',"¡La cantidad debe ser mayor a 0!");
         }
   
         $product = Product::find($request->id);
         
         if ($request->quantity > $product->stock_min) {
-            return back()->with('status',"Has pedido una cantidad incorrecta, stock máximo alcanzado.");
+            return back()->withErrors("¡Has pedido una cantidad incorrecta, stock máximo alcanzado.");
         }
 
         $product->quantity = $request->quantity;
@@ -68,7 +63,7 @@ class CartController extends Controller
             $product->sabores = $data['sabor_selected'],
         );
 
-        return back()->with('status',"$product->name Se ha agregado al carrito" );
+        return back()->with('status',"¡$product->name Se ha agregado al carrito" );
 
     }
 
@@ -86,7 +81,7 @@ class CartController extends Controller
         Cart::remove([
             'id' => $request->id,
         ]);
-        return back()->with('status','El producto se ha eliminado del carrito');
+        return back()->with('status','¡El producto se ha eliminado del carrito');
     }
 
     //Aqui se limpia el carrito y ya no hay manera de volver a ver los productos pedidos
@@ -94,7 +89,7 @@ class CartController extends Controller
     public function clear() {
         
         Cart::clear();
-        return view('dashboard')->with('status', 'Su pedido se ha enviado exitosamente!');
+        return view('dashboard')->with('status', '¡Su pedido se ha enviado exitosamente!');
 
     }
 }

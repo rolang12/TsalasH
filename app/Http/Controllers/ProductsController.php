@@ -10,16 +10,7 @@ use Illuminate\Support\Facades\Crypt;
 
 class ProductsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        // Auth::user()->id;
-    }
-
+   
     /**
      * Show the form for creating a new resource.
      *
@@ -39,9 +30,10 @@ class ProductsController extends Controller
     public function store(StoreProductRequest $request)
     {
 
-        if ($request = $request->validated()){
+        // dd($request);
+        if ($data = $request->validated()){
+            
             $product = new Product();
-
             $destination_path = 'public/images';
             $image = $request->file('media');
             $image_name = $image->getClientOriginalName();
@@ -70,6 +62,7 @@ class ProductsController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
+
     public function show(Product $product)
     {
         $products = Product::with('category')
@@ -86,6 +79,18 @@ class ProductsController extends Controller
         ->first();
                 
         return view('products.show', compact('product'));
+
+    }
+
+    public function showAdminProduct($id)
+    {
+        $id = decrypt($id);
+
+        $product   = Product::with('category')
+        ->where('id', $id)
+        ->first();
+                
+        return view('products.show-admin', compact('product'));
 
     }
 
@@ -117,6 +122,9 @@ class ProductsController extends Controller
         $product->name         = $request->name;
         $product->price        = $request->price;
         $destination_path = 'public/images';
+
+        if ($request->file('media') != null) {
+
         $image = $request->file('media');
         $image_name = $image->getClientOriginalName();
         $path = $request->file('media')->storeAs($destination_path, $image_name);
@@ -125,7 +133,9 @@ class ProductsController extends Controller
         $product->description     = $request->description;
         $product->save();
 
-        return redirect()->route('products.crud.show')->with('status','Producto actualizado Satisfactoriamente!');
+        }
+
+        return redirect()->route('products.crud.show')->with('status','Producto actualizado Exitosamente!');
         
     }
 
@@ -140,7 +150,7 @@ class ProductsController extends Controller
         $id = Crypt::decrypt($id);
         Product::findOrFail($id)->delete();
 
-        return redirect()->back()->with('status','Producto borrado Satisfactoriamente!');
+        return redirect()->back()->with('status','Comentario borrado Exitosamente!');
     
     }
 }

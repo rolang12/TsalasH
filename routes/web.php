@@ -26,8 +26,8 @@ Route::name('cart.')
         ->name('cart.checkout');
 
     Route::get('/cart-clear', [App\Http\Controllers\CartController::class, 'clear'])
-        ->name('cart.clear');
-
+        ->name('cart-clear');//dice que la ruta cart.clear no esta definidaaaa :(((())))
+        // ES cart.cart-clear ._. o si no no no da
     Route::post('/cart-removeitem', [App\Http\Controllers\CartController::class, 'removeitem'])
         ->name('cart.removeitem');
 
@@ -76,6 +76,9 @@ Route::name('products.')
     Route::get('/products-show-product/{id}', [App\Http\Controllers\ProductsController::class, 'showProduct'])
         ->name('crud.show-product');
 
+    Route::get('/products-show-admin-product/{id}', [App\Http\Controllers\ProductsController::class, 'showAdminProduct'])
+        ->name('crud.show-admin-product');
+
     Route::get('/products-edit/{id}', [App\Http\Controllers\ProductsController::class, 'edit'])
         ->name('crud.edit');
 
@@ -89,12 +92,20 @@ Route::name('products.')
 
 
 
-Route::get('/sabors', [App\Http\Livewire\Sabores::class, 'render'])
-        ->name('sabors');
-Route::get('/sabors-edit/{id}', [App\Http\Livewire\Sabores::class, 'edit'])
-        ->name('sabors.edit');
-Route::put('/sabores-update', [App\Http\Livewire\Sabores::class, 'update'])
-        ->name('sabores.update');
+Route::name('sabors.')
+    ->middleware('auth:sanctum')
+    ->group( function() {
+
+    Route::get('/sabors', [App\Http\Livewire\Sabores::class, 'render'])
+            ->name('sabors');
+    Route::get('/sabores-edit/{id}', [App\Http\Livewire\Sabores::class, 'edit'])
+            ->name('sabores-edit');
+    Route::put('/sabores-update', [App\Http\Livewire\Sabores::class, 'update'])
+            ->name('sabores-update');
+    Route::get('/sabores-destroy/{id}', [App\Http\Livewire\Sabores::class, 'destroy'])
+            ->name('sabores-destroy');
+
+});
 
 
 
@@ -132,8 +143,6 @@ Route::name('orders.')
 
 });
 
-
-
 Route::name('comments.')
     ->middleware('auth:sanctum')
     ->group( function() {
@@ -141,6 +150,6 @@ Route::name('comments.')
     Route::post('store-comments', [App\Http\Controllers\CommentController::class, 'store'])
     ->name('store-comments');
 
-    Route::get('/order-create', [App\Http\Controllers\CommentController::class, 'delete'])
-    ->name('delete-comments');
+    Route::get('delete-comment/{id}', [App\Http\Controllers\CommentController::class, 'destroy'])
+    ->name('delete-comment');
 });
