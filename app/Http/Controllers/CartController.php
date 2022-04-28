@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\Sabor;
+// use Darryldecode\Cart\Cart as CartCart;
 use Illuminate\Http\Request;
-use Cart;
-
+use Darryldecode\Cart\Facades\CartFacade as Cart;
+// use Cart;
 class CartController extends Controller
 {
     
@@ -77,10 +78,9 @@ class CartController extends Controller
 
     //aqui se quita un producto individual del carrito
     public function removeitem(Request $request) {
-        
-        Cart::remove([
-            'id' => $request->id,
-        ]);
+        $id = intval($request->id);
+        // dd($id);
+        Cart::remove($id);
         return back()->with('status','¡El producto se ha eliminado del carrito');
     }
 
@@ -89,8 +89,8 @@ class CartController extends Controller
     public function clear() {
         
         Cart::clear();
-        return view('dashboard')->with('status', '¡Su pedido se ha enviado exitosamente!');
+
+        return redirect()->away('dashboard')->with('status', '¡Su pedido se ha enviado exitosamente!');
 
     }
 }
-

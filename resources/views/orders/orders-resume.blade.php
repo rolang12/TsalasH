@@ -1,10 +1,12 @@
 @extends('layouts.layout')
 
+@section('title', 'Ventas del Dia')
+
 @section('content')
-    <div class="grid grid-cols-2 mt-28 -mb-20 items-center">
+    <div class="grid grid-cols-2 mt-28 ml-6 -mb-20 items-center">
 
         <div class="flex">
-            <h2 class="text-3xl font-bold px-3 "> Resumen del Día</h2>
+            <h2 class="text-3xl font-bold px-3 "> Resumen de Ventas Del Día</h2>
         </div>
 
 
@@ -18,7 +20,6 @@
 
                 <tr class="bg-black p-3 text-white ">
 
-                    <th data-priority="1">Cliente</th>
                     <th data-priority="2">ID Orden</th>
                     <th class="text-left">Producto</th>
                     <th data-priority="3">Precio</th>
@@ -32,8 +33,7 @@
                 @foreach ($orders as $order)
                     <tr>
 
-                        <td class="text-left  ">{{ $order->order->user->name . ' ' . $order->order->user->last_name }}
-                        </td>
+
                         <td class="text-left  ">{{ $order->order->id }}
                         </td>
                         <td class="text-left  ">{{ $order->product->name }}</td>

@@ -10,11 +10,7 @@ use App\Models\ProductOrder;
 use App\Models\Sabor;
 use Illuminate\Support\Facades\Crypt;
 use Cart;
-use Carbon\Carbon;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Date;
-use Illuminate\Support\Facades\DB;
-use PHPUnit\Framework\Constraint\Count;
 
 class OrdersController extends Controller
 {
@@ -79,6 +75,7 @@ class OrdersController extends Controller
             $product->save();
 
         }
+        
         
         // VICTOR Aqui es donde se tiene que enviar la Data a la vista
         return view('orders.factura');

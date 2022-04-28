@@ -71,11 +71,11 @@ class ProductsController extends Controller
         return view('products.crud-products', compact('products'));
     }
 
-    public function showProduct($id)
+    public function showProduct($name)
     {
 
         $product   = Product::with('category')
-        ->where('id', $id)
+        ->where('name', $name)
         ->first();
                 
         return view('products.show', compact('product'));

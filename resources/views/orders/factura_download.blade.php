@@ -16,11 +16,7 @@
 <body>
     <!-- component -->
     <section class="bg-gray-100 py-20">
-        <div class="flex items-center bg-gray-100 text-black text-sm font-bold px-4 py-3 ml-4" role="alert">
-            <a class="ml-2" href="{{ route('cart.cart-clear') }}">
-                <i class="fa-solid fa-house-user"></i>
-                Inicio</a>
-        </div>
+
         <div class="max-w-2xl mx-auto py-0 md:py-16">
             <article class="shadow-none md:shadow-md md:rounded-md overflow-hidden">
                 <div class="md:rounded-b-md  bg-white">
@@ -29,7 +25,7 @@
                             <div class="flex justify-between items-top">
                                 <div class="space-y-4">
                                     <div>
-                                        <img class="h-12 object-cover mb-4"
+                                        <img class="h-6 object-cover mb-4"
                                             src="https://i.ibb.co/3hFxBpt/logo-victor-44px-1.png">
                                         <p class="font-bold text-lg"> Factura de venta </p>
                                         <p> TsalasH - Delicias del Parque </p>
@@ -38,26 +34,11 @@
                                         <p class="font-medium text-sm text-gray-400"> Comprador </p>
                                         <p> {{ Auth::user()->name . ' ' . Auth::user()->last_name }} </p>
                                         <p> {{ Auth::user()->email }} </p>
-                                        <p> Cc: {{ Auth::user()->document_id }} </p>
+                                        <p> CC: {{ Auth::user()->document_id }} </p>
                                         <p> {{ Auth::user()->phone }} </p>
                                     </div>
                                 </div>
                                 <div class="space-y-2">
-                                    <div>
-                                        <a href="{{ route('pdf_download') }}"
-                                            class="inline-flex items-center text-sm font-medium text-blue-500 hover:opacity-75 ">
-                                            Download PDF <svg class="ml-0.5 h-4 w-4 fill-current"
-                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                                                fill="currentColor" aria-hidden="true">
-                                                <path
-                                                    d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z">
-                                                </path>
-                                                <path
-                                                    d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z">
-                                                </path>
-                                            </svg>
-                                        </a>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -103,16 +84,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="p-9 border-b border-gray-200">
-                        <div class="space-y-3">
-                            <div class="flex justify-between">
-                                <div>
-                                    <p class="font-bold text-black text-lg"> Total </p>
-                                </div>
-                                <p class="font-bold text-black text-lg">$ {{ Cart::getTotal() }} COP</p>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </article>
         </div>

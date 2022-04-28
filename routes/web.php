@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\OrderResume;
 use App\Http\Livewire\Sabores;
+use App\Http\Controllers\PdfController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -28,8 +29,8 @@ Route::name('cart.')
     Route::get('/cart-clear', [App\Http\Controllers\CartController::class, 'clear'])
         ->name('cart-clear');//dice que la ruta cart.clear no esta definidaaaa :(((())))
         // ES cart.cart-clear ._. o si no no no da
-    Route::post('/cart-removeitem', [App\Http\Controllers\CartController::class, 'removeitem'])
-        ->name('cart.removeitem');
+    Route::post('cart-removeitem', [App\Http\Controllers\CartController::class, 'removeitem'])
+        ->name('cart-removeitem');
 
 });
 
@@ -73,7 +74,7 @@ Route::name('products.')
     Route::get('/products-show', [App\Http\Controllers\ProductsController::class, 'show'])
         ->name('crud.show');
 
-    Route::get('/products-show-product/{id}', [App\Http\Controllers\ProductsController::class, 'showProduct'])
+    Route::get('/products-show-product/{name}', [App\Http\Controllers\ProductsController::class, 'showProduct'])
         ->name('crud.show-product');
 
     Route::get('/products-show-admin-product/{id}', [App\Http\Controllers\ProductsController::class, 'showAdminProduct'])
@@ -153,3 +154,5 @@ Route::name('comments.')
     Route::get('delete-comment/{id}', [App\Http\Controllers\CommentController::class, 'destroy'])
     ->name('delete-comment');
 });
+
+Route::get('/pdf_download',[PdfController::class,'download'] )->name('pdf_download');

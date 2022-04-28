@@ -268,10 +268,10 @@
 
                     <div>
                         <h3 class="text-gray-50 uppercase dark:text-white">Contactanos</h3>
-                        <span class="block mt-2 text-sm text-gray-300 dark:text-gray-400 hover:underline">+1 526 654
-                            8965</span>
+                        <span class="block mt-2 text-sm text-gray-300 dark:text-gray-400 hover:underline">+57 3007688779
+                        </span>
                         <span
-                            class="block mt-2 text-sm text-gray-300 dark:text-gray-400 hover:underline">example@email.com</span>
+                            class="block mt-2 text-sm text-gray-300 dark:text-gray-400 hover:underline">tsalash@hotmail.com</span>
                         <span class="block mt-2 text-sm text-gray-300 dark:text-gray-400 hover:underline">Calle 25
                             #5-60</span>
 

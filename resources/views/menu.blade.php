@@ -68,7 +68,7 @@
 
     </div>
 
-    <div class="py-10">
+    <div class="py-12">
         <h2 class="text-center font-principal font-bold text-4xl text-purple-500 pb-8">Categorias</h2>
 
         <ul class="inline-block animate-pulse flex text-2xl justify-center font-light space-x-8">

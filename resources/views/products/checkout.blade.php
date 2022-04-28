@@ -1,16 +1,18 @@
 @extends('layouts.layout')
 
+@section('title', 'Carrito')
+
 @section('content')
     @auth
 
         {{-- Esta es la factura que aun se pueden eliminar productos antes de enviarlo --}}
         <!-- ====== Table Section Start -->
         <livewire:messages.success-product />
-        <div class="text-2xl font-semibold">Carrito de Compras</div>
 
         @if (count(Cart::getContent()))
             <section class="bg-white  mt-24 py-20 lg:py-[120px]">
                 <div class="container">
+                    <div class="text-2xl mb-3 text-black font-semibold">Carrito de Compras</div>
                     <div class="flex flex-wrap -mx-4">
                         <div class="w-full px-2">
                             <div class="max-w-full overflow-x-auto">
@@ -82,13 +84,14 @@
                                                 </td>
                                                 <td
                                                     class=" text-center text-white font-medium text-base py-2 bg-red-500 hover:bg-red-700 hover:text-white ">
-                                                    <a href="#" class=" py-2 ">
-                                                        <form action="{{ route('cart.cart.removeitem') }}" method="POST">
-                                                            @csrf
-                                                            <input type="hidden" name="id" value="{{ $item->id }}">
-                                                            <button type="submit" class=""> Eliminar </button>
-                                                        </form>
-                                                    </a>
+
+                                                    {{-- <a href="#" class=" py-2 "> --}}
+                                                    <form action="{{ route('cart.cart-removeitem') }}" method="POST">
+                                                        @csrf
+                                                        <input type="hidden" name="id" value="{{ $item->id }}">
+                                                        <button type="submit" class=""> Eliminar </button>
+                                                    </form>
+                                                    {{-- </a> --}}
                                                 </td>
                                             </tr>
                                         @endforeach

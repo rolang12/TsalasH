@@ -12,10 +12,11 @@
             <h2 class="text-3xl font-bold px-3 ml-6"> Tabla de Ordenes</h2>
         </div>
 
-        <div class="flex justify-end  md:col-span-1 col-span-2 justify-end mx-auto md:mx-0">
+        <div class="flex md:col-span-1 col-span-2 justify-end mx-auto md:mx-0">
 
             <a href="{{ route('orders.orders-resume') }} ">
-                <div class="p-3 text-center rounded-sm bg-black mr-5 md:mr-0 mt-8 font-bold text-white w-48">Ver Reporte del
+                <div class="p-3 text-center rounded-sm bg-black mr-5  mt-8 font-bold text-white w-48">Ver Reporte de Ventas
+                    Del
                     Día
                 </div>
             </a>
@@ -34,7 +35,7 @@
                 <tr class="bg-black p-5 text-white ">
 
                     <th data-priority="1">ID</th>
-                    <th class="text-left" data-priority="2">Usuario</th>
+                    <th class="text-left" data-priority="2">CC Usuario</th>
                     <th class="text-left" data-priority="2">Hora Pedido</th>
                     <th class="text-left" data-priority="3">Estado</th>
                     <th class="text-left" data-priority="4">Lugar</th>

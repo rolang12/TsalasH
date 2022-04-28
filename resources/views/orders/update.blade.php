@@ -1,5 +1,7 @@
 @extends('layouts.layout')
 
+@section('title', 'Editar Orden')
+
 @section('content')
     <div class="container bg-white overflow-hidden w-screen ">
         <div class="row">

@@ -7,9 +7,9 @@
                 class="px-4 col gradient-card-recent  transform hover:scale-95 motion-reduce:transform-none hover:brightness-150 duration-500 lg:pt-[20px] pb-5 lg:pb-5 bg-#000">
 
                 <div class="rounded-lg overflow-hidden ">
-                    <img src="{{ asset('/storage/images/' . $post->file) }}" alt="" height="90px" />
+                    <img class="w-80 h-80" src="{{ asset('/storage/images/' . $post->file) }}" alt="TsalasH" />
 
-                    <div class=" p-7 sm:p-9 md:p-4 xl:p-5 text-center">
+                    <div class=" p-3 sm:p-7 md:p-1 xl:p-4 text-center">
 
                         <div class="text-gray-200 pb-2 text-sm text-right">
                             Categoria: {{ $post->category->name }} </div>
@@ -31,12 +31,12 @@
                             </div>
                         </h3>
 
-                        <p class="text-base text-justify break-words text-gray-400 px-5 leading-relaxed mb-7">
+                        <p class="text-base text-justify break-words text-gray-400 px-2 leading-relaxed mb-7">
                             {{ $rest = substr($post->description, 0, 180) . '...' }}
                         </p>
 
                         {{-- }}" --}}
-                        <a href="{{ route('products.crud.show-product', ['id' => $post->id]) }}"
+                        <a href="{{ route('products.crud.show-product', ['name' => $post->name]) }}"
                             class="
                             transition ease-in-out delay-150 bg-white
                             hover:-translate-y-1 hover:scale-110 hover:bg-transparent duration-200
