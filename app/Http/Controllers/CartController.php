@@ -80,7 +80,8 @@ class CartController extends Controller
     public function removeitem(Request $request) {
         $id = intval($request->id);
         // dd($id);
-        Cart::remove($id);
+        Cart::remove([ 
+           'id' => $request->id]);
         return back()->with('status','¡El producto se ha eliminado del carrito');
     }
 

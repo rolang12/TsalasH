@@ -2,7 +2,6 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Sabor;
 use App\Models\SaborStock;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;

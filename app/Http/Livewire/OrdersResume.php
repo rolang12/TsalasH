@@ -5,7 +5,6 @@ namespace App\Http\Livewire;
 use App\Models\Order;
 use Carbon\Carbon;
 use Livewire\Component;
-use App\Models\ProductOrder;
 
 class OrdersResume extends Component
 {

@@ -67,7 +67,7 @@
                                                 <td
                                                     class=" text-center text-dark font-medium text-base
                                         py-2 px-2 bg-[#F3F6FF] border-b border-[#E8E8E8]">
-                                                    ${{ $item->price }}
+                                                    ${{ number_format($item->price, 2) }}
                                                 </td>
 
                                                 <td
@@ -79,19 +79,19 @@
                                                 <td
                                                     class=" text-center text-dark font-medium text-base
                                         py-2 px-2 bg-white border-b border-[#E8E8E8]">
-                                                    ${{ $subTotal = $item->quantity * $item->price }}
+                                                    ${{ number_format($subTotal = $item->quantity * $item->price, 2) }}
 
                                                 </td>
                                                 <td
                                                     class=" text-center text-white font-medium text-base py-2 bg-red-500 hover:bg-red-700 hover:text-white ">
 
-                                                    {{-- <a href="#" class=" py-2 "> --}}
-                                                    <form action="{{ route('cart.cart-removeitem') }}" method="POST">
-                                                        @csrf
-                                                        <input type="hidden" name="id" value="{{ $item->id }}">
-                                                        <button type="submit" class=""> Eliminar </button>
-                                                    </form>
-                                                    {{-- </a> --}}
+                                                    <button class=" py-2 ">
+                                                        <form action="{{ route('cart.cart-removeitem') }}" method="POST">
+                                                            @csrf
+                                                            <input type="hidden" name="id" value="{{ $item->id }}">
+                                                            <button type="submit" class=""> Eliminar </button>
+                                                        </form>
+                                                    </button>
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -105,7 +105,7 @@
                                             <td
                                                 class="text-center text-dark font-bold text-base
                                     py-4 px-2 bg-gray-300 border-b border-[#E8E8E8]">
-                                                ${{ Cart::getTotal() }}
+                                                ${{ number_format(Cart::getTotal(), 2) }}
 
                                             </td>
                                         </tr>

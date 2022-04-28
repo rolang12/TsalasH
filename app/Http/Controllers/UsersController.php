@@ -2,13 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Models\Order;
-use App\Models\Rol;
 use Illuminate\Support\Facades\Crypt;
-use App\Models\Services\UsersServices;
 
 class UsersController extends Controller
 {

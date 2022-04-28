@@ -118,7 +118,8 @@
 
     <div class="bg-white md:mt-0 -mt-5 min-h-screen py-9 ">
 
-        <h2 class="text-black font-principal text-5xl text-center  z-50 font-semibold pb-12">Helados</h2>
+        <h2 class="text-black font-principal text-3xl md:text-5xl text-center  z-50 font-semibold pb-0 md:pb-12">Helados
+        </h2>
         <livewire:index.helados />
 
     </div>

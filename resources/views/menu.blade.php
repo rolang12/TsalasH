@@ -70,14 +70,19 @@
 
     <div class="py-12">
         <h2 class="text-center font-principal font-bold text-4xl text-purple-500 pb-8">Categorias</h2>
-
-        <ul class="inline-block animate-pulse flex text-2xl justify-center font-light space-x-8">
-            <li><a href="#helados"> Helados</a></li>
-            <li><a href="#bebidas-frias"> Bebidas Frias</a></li>
-            <li><a href="#bebidas-calientes"> Bebidas Calientes</a></li>
-            <li><a href="#comidas-rapidas">Comidas Rápidas</a></li>
-            <li><a href="#carnes">Carnes </a> </li>
-        </ul>
+        <!--yo lo veo bien asi con el semibold -->
+        <div class="md:flex justify-center grid-cols-1 text-center animate-pulse text-2xl font-light ">
+            <div class="px-3 ease-in hover:font-semibold duration-300 border-r-2"><a href="#helados">Helados</a>
+            </div>
+            <div class="px-3 ease-in hover:font-semibold duration-300 border-r-2"><a href="#bebidas-frias">Bebidas
+                    Frias</a></div>
+            <div class="px-3 ease-in hover:font-semibold duration-300 border-r-2"><a href="#bebidas-calientes">Bebidas
+                    Calientes</a></div>
+            <div class="px-3 ease-in hover:font-semibold duration-300 border-r-2"><a href="#comidas-rapidas">Comidas
+                    Rápidas</a>
+            </div>
+            <div class="px-3 ease-in hover:font-semibold duration-300 "><a href="#carnes">Carnes</a> </div>
+        </div>
 
 
     </div>
