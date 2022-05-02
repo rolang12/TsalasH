@@ -1,6 +1,6 @@
 <div>
     @if ($errors->any())
-        <div class="mt-28 -mb-11">
+        <div class="mt-3 z-10 -mb-11">
             <ul>
                 @foreach ($errors->all() as $error)
                     <li>

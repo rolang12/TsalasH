@@ -7,6 +7,14 @@
 
 @section('content')
 
+    <div class="md:left-80 left-25 md:w-1/2 w-2/2 absolute top-0">
+        <livewire:messages.success-product />
+    </div>
+
+    <div class="md:left-80 left-25 md:w-1/2 w-2/2 absolute top-0">
+        @include('livewire.messages.errors')
+    </div>
+
     <style>
         @media only screen and (max-width: 639px) and (min-width: 401px) {
             .ssm {
@@ -92,8 +100,6 @@
     </script>
     <!--aqui carrusel -->
 
-
-
     @if (count(Cart::getContent()))
         <div
             class="fixed right-0 text-xl bottom-12 bg-gradient-to-r from-cyan-400 to-pink-400 md:py-4 md:px-5 py-2 px-3 z-50 rounded-lg text-white font-bold animate-pulse duration-300 hover:-translate-x-6 ">
@@ -108,13 +114,7 @@
         </div>
     @endif
 
-    <div class="left-80 w-1/2 absolute z-30 top-0">
-        <livewire:messages.success-product />
-    </div>
 
-    <div class="left-80 w-1/2 absolute z-30 top-0">
-        @include('livewire.messages.errors')
-    </div>
 
     <div class="bg-white md:mt-0 -mt-5 min-h-screen py-9 ">
 

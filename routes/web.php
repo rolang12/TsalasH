@@ -27,8 +27,7 @@ Route::name('cart.')
         ->name('cart.checkout');
 
     Route::get('/cart-clear', [App\Http\Controllers\CartController::class, 'clear'])
-        ->name('cart-clear');//dice que la ruta cart.clear no esta definidaaaa :(((())))
-        // ES cart.cart-clear ._. o si no no no da
+        ->name('cart-clear');
     Route::post('/cart-removeitem', [App\Http\Controllers\CartController::class, 'removeitem'])
         ->name('cart-removeitem');
 

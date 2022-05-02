@@ -3,8 +3,13 @@
 @section('title', 'Menú')
 
 @section('content')
-    <livewire:messages.success-product />
-    <livewire:messages.error-product />
+    <div class="md:left-80 left-25 md:w-1/2 w-2/2 absolute top-0">
+
+        <livewire:messages.success-product />
+    </div>
+    <div class="md:left-80 left-25 md:w-1/2 w-2/2 z-10 absolute top-0">
+        <livewire:messages.error-product />
+    </div>
 
     <style>
         h2 {
@@ -70,7 +75,6 @@
 
     <div class="py-12">
         <h2 class="text-center font-principal font-bold text-4xl text-purple-500 pb-8">Categorias</h2>
-        <!--yo lo veo bien asi con el semibold -->
         <div class="md:flex justify-center grid-cols-1 text-center animate-pulse text-2xl font-light ">
             <div class="px-3 ease-in hover:font-semibold duration-300 border-r-2"><a href="#helados">Helados</a>
             </div>

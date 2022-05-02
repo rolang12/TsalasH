@@ -19,7 +19,7 @@
                         <img class="object-cover w-full h-72 mt-2" src="{{ asset('/storage/images/' . $item->file) }}"
                             alt="TsalasH">
 
-                        <div class="grid grid-cols-2 justify-evenly px-6 py-2 bg-gray-100 rounded-b-lg">
+                        <div class="grid grid-cols-2 justify-evenly px-6 py-2 bg-gray-50 rounded-b-lg">
                             <div class="col">
                                 <h1
                                     class="lg:text-base pl-2 2xl:text-2xl md:text-sm py-3 text-left font-semibold text-gray-600">

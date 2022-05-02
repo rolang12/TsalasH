@@ -343,7 +343,7 @@
                 <div class="lg:flex">
 
                     <div class="mt-6 lg:mt-0 lg:flex-1">
-                        <div class="grid grid-cols-1 md:grid-cols-3">
+                        <div class="grid grid-cols-1 md:grid-cols-4">
 
                             <div class="px-6 col">
                                 <div>
@@ -388,14 +388,24 @@
                             </div>
 
 
-                            <div class="col text-center py-5 md:py-0  ">
+                            <div class="col text-center  py-5 md:py-0 ">
                                 <h3 class="text-gray-50 uppercase dark:text-white">Productos</h3>
-                                <a href="#"
+                                <a href="{{ route('menu') . '#helados' }}"
                                     class="block mt-2 text-sm text-gray-300 dark:text-gray-400 hover:underline">Helados</a>
-                                <a href="#"
+                                <a href="{{ route('menu') . '#bebidas-frias' }}"
                                     class="block mt-2 text-sm text-gray-300 dark:text-gray-400 hover:underline">Comidas</a>
-                                <a href="#"
+                                <a href="{{ route('menu') . '#comidas-rapidas' }}"
                                     class="block mt-2 text-sm text-gray-300 dark:text-gray-400 hover:underline">Bebidas</a>
+                            </div>
+
+                            <div class="col text-center  py-5 md:py-0 ">
+                                <h3 class="text-gray-50 uppercase dark:text-white">Redes</h3>
+                                <a href="#"
+                                    class="block mt-2 text-sm text-gray-300 dark:text-gray-400 hover:underline">Facebook</a>
+                                <a href="#"
+                                    class="block mt-2 text-sm text-gray-300 dark:text-gray-400 hover:underline">Instagram</a>
+                                <a href="#"
+                                    class="block mt-2 text-sm text-gray-300 dark:text-gray-400 hover:underline">Twitter</a>
                             </div>
 
                             <div class="col text-center py-5 md:py-0 ">
