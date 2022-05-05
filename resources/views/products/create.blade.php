@@ -1,9 +1,11 @@
 @extends('layouts.layout')
 
 @section('content')
+    @include('livewire.messages.errors')
+
     <div class="row mt-20 md:mb-5 mb-10 ">
 
-        {!! Form::open(['route' => 'products.crud.store', 'methos' => 'POST', 'files' => true]) !!}
+        {!! Form::open(['route' => 'products.products.crud.store', 'method' => 'POST', 'files' => true]) !!}
         {!! Form::hidden('users_id', Auth::user()->id) !!}
         {!! Form::hidden('place', 'local') !!}
 
@@ -49,9 +51,9 @@
 
             {{ Form::file('media', [
                 'class' => 'text-gray-700 file:mr-4 file:py-2 file:px-4 file:bg-transparent
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            file:border-0 file:text-base file:font-semibold file:text-pink-500
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            hover:file:bg-pink-100 text-white bg-transparent p-4 col-span-2 w-full
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            border border-black h-15 rounded-sm p-3  my-2',
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                file:border-0 file:text-base file:font-semibold file:text-pink-500
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                hover:file:bg-pink-100 text-white bg-transparent p-4 col-span-2 w-full
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                border border-black h-15 rounded-sm p-3  my-2',
                 'required',
             ]) }}
 

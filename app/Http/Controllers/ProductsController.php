@@ -33,7 +33,7 @@ class ProductsController extends Controller
         if ($data = $request->validated()){
             
             $product = new Product();
-            $destination_path = 'public/images';
+            $destination_path = 'public/image';
             $image = $request->file('media');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('media')->storeAs($destination_path, $image_name);

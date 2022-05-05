@@ -78,8 +78,7 @@ class CartController extends Controller
 
     //aqui se quita un producto individual del carrito
     public function removeitem(Request $request) {
-        // $id = intval();
-        // dd($request->id);
+        
         Cart::remove(
             $request->id_t
         );

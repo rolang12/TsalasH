@@ -68,8 +68,8 @@ Route::name('products.')
     Route::get('/products-create', [App\Http\Controllers\ProductsController::class, 'create'])
         ->name('crud.create');
 
-    Route::post('/products-store', [App\Http\Controllers\ProductsController::class, 'store'])
-        ->name('crud.store');
+    Route::post('/products-crud-store', [App\Http\Controllers\ProductsController::class, 'store'])
+        ->name('products.crud.store');
 
     Route::get('/products-show', [App\Http\Controllers\ProductsController::class, 'show'])
         ->name('crud.show');
