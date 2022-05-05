@@ -13,19 +13,19 @@
                 <div class="text-left">{!! Form::label('Rol', null, ['class' => 'text-black font-semibold text-left']) !!}</div>
                 <div class="text-left">
                     <select class=" w-full p-3 rounded-lg bg-transparent text-black " name="rol" :value="old('rol')">
-                        <option class="bg-transparent text-light text-base text-gray-700 p-4" value="client">Cliente
+                        <option class="bg-transparent font-light text-base text-gray-700 p-4" value="client">Cliente
                         </option>
-                        <option class="bg-transparent text-light text-base text-gray-700 p-4" value="weird">Mesero</option>
-                        <option class="bg-transparent text-light text-base text-gray-700 p-4" value="admin">Administrador
+                        <option class="bg-transparent font-light text-base text-gray-700 p-4" value="weird">Mesero</option>
+                        <option class="bg-transparent font-light text-base text-gray-700 p-4" value="admin">Administrador
                         </option>
                     </select>
                 </div>
                 <div class="text-left">{!! Form::label('Estado', null, ['class' => 'text-black font-semibold text-left']) !!}</div>
                 <div class="text-left">
                     <select class=" w-full p-3 rounded-lg bg-transparent text-black " name="status" :value="old('status')">
-                        <option class="bg-transparent text-light text-base text-gray-700 p-4" value="habilited">Habilitado
+                        <option class="bg-transparent font-light text-base text-gray-700 p-4" value="habilited">Habilitado
                         </option>
-                        <option class="bg-transparent text-light text-base text-gray-700 p-4" value="habilited">Inhabilitado
+                        <option class="bg-transparent font-light text-base text-gray-700 p-4" value="habilited">Inhabilitado
                         </option>
                     </select>
                 </div>

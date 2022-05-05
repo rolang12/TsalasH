@@ -18,15 +18,15 @@
 
                         <select class=" w-full p-3 rounded-lg bg-transparent text-black " name="status"
                             :value="old('status')">
-                            <option class="bg-transparent text-light text-base text-gray-700 p-4" value="enviado">Enviado
+                            <option class="bg-transparent  text-base text-gray-700 p-4" value="enviado">Enviado
                             </option>
-                            <option class="bg-transparent text-light text-base text-gray-700 p-4" value="espera">Espera
+                            <option class="bg-transparent font-light text-base text-gray-700 p-4" value="espera">Espera
                             </option>
-                            <option class="bg-transparent text-light text-base text-gray-700 p-4" value="proceso">Proceso
+                            <option class="bg-transparent font-light text-base text-gray-700 p-4" value="proceso">Proceso
                             </option>
-                            <option class="bg-transparent text-light text-base text-gray-700 p-4" value="despachado">
+                            <option class="bg-transparent font-light text-base text-gray-700 p-4" value="despachado">
                                 Despachado</option>
-                            <option class="bg-transparent text-light text-base text-gray-700 p-4" value="confirmado">
+                            <option class="bg-transparent font-light text-base text-gray-700 p-4" value="confirmado">
                                 Confirmado</option>
                         </select>
                     </div>
