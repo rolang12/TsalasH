@@ -28,7 +28,8 @@ Route::name('cart.')
 
     Route::get('/cart-clear', [App\Http\Controllers\CartController::class, 'clear'])
         ->name('cart-clear');
-    Route::post('/cart-removeitem', [App\Http\Controllers\CartController::class, 'removeitem'])
+
+    Route::post('cart-removeitem', [App\Http\Controllers\CartController::class, 'removeitem'])
         ->name('cart-removeitem');
 
 });

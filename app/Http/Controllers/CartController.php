@@ -6,8 +6,8 @@ use App\Models\Product;
 use App\Models\Sabor;
 // use Darryldecode\Cart\Cart as CartCart;
 use Illuminate\Http\Request;
-//use Darryldecode\Cart\Facades\CartFacade as Cart;
-use Cart;
+use Darryldecode\Cart\Facades\CartFacade as Cart;
+// use Cart;
 class CartController extends Controller
 {
     
@@ -78,8 +78,12 @@ class CartController extends Controller
 
     //aqui se quita un producto individual del carrito
     public function removeitem(Request $request) {
-        $id = intval($request->id);
-        Cart::remove($id);
+        // $id = intval();
+        // dd($request->id);
+        Cart::remove(
+            $request->id_t
+        );
+
         return back()->with('status','¡El producto se ha eliminado del carrito');
     }
 
