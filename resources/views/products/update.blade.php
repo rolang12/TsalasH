@@ -1,6 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
+    @include('livewire.messages.errors')
     <div class="row mt-20 md:mb-5 mb-10">
 
 

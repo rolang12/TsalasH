@@ -1,7 +1,6 @@
 <div class="pt-5">
     <x-guest-layout>
 
-        @include('livewire.messages.errors')
 
         <x-jet-authentication-card>
             <x-slot name="logo">
