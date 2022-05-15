@@ -1,7 +1,7 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
-<nav x-data="{ open: false }"
-    class=" w-full z-50 fixed -top-1 bg-gradient-to-r from-blue-300 via-cyan-300 py-2 to-pink-300 border-gray-100">
+<nav x-data="{ open: false }" class=" w-full z-50 fixed -top-1  py-2 border-gray-100 bg-white ">
+    {{-- bg-gradient-to-r from-blue-300 via-cyan-300  to-pink-300 --}}
     <!-- Primary Navigation Menu -->
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
