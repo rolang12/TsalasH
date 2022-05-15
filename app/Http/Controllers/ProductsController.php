@@ -33,7 +33,7 @@ class ProductsController extends Controller
         if ($data = $request->validated()){
             
             $product = new Product();
-            $destination_path = 'public/image';
+            $destination_path = ('public/images/');
             $image = $request->file('media');
             $image_name = $image->getClientOriginalName();
             $path = $request->file('media')->storeAs($destination_path, $image_name);
@@ -120,7 +120,7 @@ class ProductsController extends Controller
         $product = Product::find($request->id);
         $product->name         = $request->name;
         $product->price        = $request->price;
-        $destination_path = 'public/images';
+        $destination_path = '/storage/images/';
 
         if ($request->file('media') != null) {
 
