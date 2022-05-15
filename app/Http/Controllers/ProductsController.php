@@ -120,19 +120,20 @@ class ProductsController extends Controller
         $product = Product::find($request->id);
         $product->name         = $request->name;
         $product->price        = $request->price;
-        $destination_path = '/storage/images/';
+        $product->stock_min    = $request->stock_min;
+        $product->description     = $request->description;
+        $destination_path = 'public/images/';
 
         if ($request->file('media') != null) {
 
-        $image = $request->file('media');
-        $image_name = $image->getClientOriginalName();
-        $path = $request->file('media')->storeAs($destination_path, $image_name);
-        $product['file'] = $image_name;
-        $product->stock_min    = $request->stock_min;
-        $product->description     = $request->description;
-        $product->save();
-
+            $image = $request->file('media');
+            $image_name = $image->getClientOriginalName();
+            $path = $request->file('media')->storeAs($destination_path, $image_name);
+            $product['file'] = $image_name;
+          
         }
+
+         $product->save();
 
         return redirect()->route('products.crud.show')->with('status','Producto actualizado Exitosamente!');
         
