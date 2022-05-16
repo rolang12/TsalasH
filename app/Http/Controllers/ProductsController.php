@@ -122,15 +122,30 @@ class ProductsController extends Controller
         $product->price        = $request->price;
         $product->stock_min    = $request->stock_min;
         $product->description     = $request->description;
+
+
         $destination_path = 'public/images/';
 
         if ($request->file('media') != null) {
 
-            $image = $request->file('media');
-            $image_name = $image->getClientOriginalName();
-            $path = $request->file('media')->storeAs($destination_path, $image_name);
-            $product['file'] = $image_name;
+            // $image = $request->file('media');
+            // $image_name = $image->getClientOriginalName();
+            // $path = $request->file('media')->storeAs($destination_path, $image_name);
+            // $product['file'] = $image_name;
           
+            $customFileName = uniqid() .'_.' . $request->file('media')->extension();
+            $request->file('media')->storeAs('public/images/', $customFileName);
+            $imageTemp = $product->file; //imagen temporal porque necesitamos borrarla del disco
+            $product->file = $customFileName;
+            
+
+            // if($imageTemp != null){
+                if(file_exists('public/storage/images/'. $imageTemp)){
+                    unlink('public/storage/images/'. $imageTemp);
+                }
+            // // }
+            $product->save();
+
         }
 
          $product->save();
